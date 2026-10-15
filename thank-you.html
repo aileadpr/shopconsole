@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank you for your order</title>
+<!-- TikTok Pixel -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  // ttq.load('PIXEL_ID');   <- pixel da inserire
+  // ttq.page();
+}(window, document, 'ttq');
+</script>
+<style>
+  body{margin:0;background:#f6f3fc;color:#1a1625;font-family:Inter,system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:16px;box-sizing:border-box}
+  .card{background:#fff;border:1px solid #e4dcf3;border-radius:20px;padding:32px 24px;max-width:480px;width:100%;text-align:center}
+  .ok{width:64px;height:64px;border-radius:50%;background:linear-gradient(90deg,#6a3fd6,#9a6bff);color:#fff;font-size:32px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+  h1{font-size:28px;margin:0 0 10px}
+  p{color:#6b6480;line-height:1.55;margin:0 0 10px}
+  .id{font-weight:700;color:#1a1625}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="ok">✓</div>
+    <h1>Thank you for your order!</h1>
+    <p>Your payment was received. We're preparing your order and you'll receive the tracking number by email as soon as it ships.</p>
+    <p id="ord"></p>
+    <p>Questions? Just reply to the confirmation email and our team will help you within 24 business hours.</p>
+  </div>
+<script>
+  let o = null;
+  try { o = JSON.parse(localStorage.getItem("last_order") || "null"); } catch(_) {}
+  if (o) document.getElementById("ord").innerHTML = 'Order reference: <span class="id">' + o.order_id + '</span>';
+  try {
+    const key = "purchase_tracked_" + (o ? o.order_id : "x");
+    if (window.ttq && !localStorage.getItem(key)) {
+      window.ttq.track("CompletePayment", { value: o ? o.total : 35.90, currency: "EUR", content_name: o ? o.product : "Dual-Screen Handheld Console" });
+      localStorage.setItem(key, "1");
+    }
+  } catch(_) {}
+</script>
+</body>
+</html>

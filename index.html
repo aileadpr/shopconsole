@@ -159,6 +159,11 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
   .sticky .sp s{color:var(--muted);font-size:13px}
   .sticky .btn{padding:14px 18px;font-size:20px;animation:none}
 
+  .cur-bar{display:flex;justify-content:flex-end;align-items:center;gap:8px;max-width:1080px;margin:0 auto;padding:8px 16px 0;font-size:13px;color:var(--muted)}
+  .cur-bar select{width:auto;padding:6px 10px;font-size:14px;border-radius:10px}
+  .cur-note{font-size:12.5px;color:var(--muted);margin:-10px 0 16px}
+  .charge-note{font-size:12.5px;color:var(--muted);text-align:right}
+  .charge-note:empty,.cur-note:empty{display:none}
   footer{border-top:1px solid var(--line);padding:30px 0 40px;text-align:center;font-size:13px;color:var(--muted)}
   footer a{color:var(--muted);margin:0 8px}
 
@@ -180,6 +185,7 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
 <body>
 
 <div class="announce">🔥 Buy 1, get 1 FREE &nbsp;·&nbsp; 🚚 Tracked shipping &nbsp;·&nbsp; ✅ 30-day money-back guarantee &nbsp;·&nbsp; 🛡️ 2-year warranty</div>
+<div class="cur-bar"><label for="curSel" style="margin:0">Currency</label><select id="curSel" aria-label="Currency"></select></div>
 
 <!-- ============ HERO ============ -->
 <header class="hero">
@@ -194,6 +200,7 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
         <span class="compare" data-compare></span>
         <span class="save" data-save></span>
       </div>
+      <p class="cur-note" data-curnote></p>
       <ul class="checks">
         <li>7-inch Full HD main screen with smooth 120Hz gameplay</li>
         <li>Second touch screen for maps, menus, stats and shortcuts</li>
@@ -375,6 +382,7 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
         <div><span>Subtotal</span><span id="sumSub"></span></div>
         <div><span>Shipping</span><span id="sumShip"></span></div>
         <div class="tot"><span>Total</span><span id="sumTot"></span></div>
+        <div class="charge-note" id="chargeNote"></div>
       </div>
 
 
@@ -453,14 +461,30 @@ const CONFIG = {
 /* ================================================================== */
 
 const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
-const money = n => CONFIG.CURRENCY + n.toFixed(2).replace(".", ",");
+const eur = n => "€" + n.toFixed(2).replace(".", ",");
+/* Currency display: prices are converted for display only; Lumino charges in EUR. */
+const CURRENCIES = { EUR:1, USD:1.16, GBP:0.87, CAD:1.62, AUD:1.78, NZD:1.98, CHF:0.94, MXN:21.6, BRL:6.3, ARS:1500, CLP:1100, COP:4600, PEN:4.1, AED:4.26, SAR:4.35, QAR:4.22, KWD:0.36, ILS:3.9, TRY:48, JPY:175, KRW:1620, CNY:8.3, HKD:9.05, SGD:1.5, MYR:4.9, PHP:66, VND:30500, INR:102 };
+const CUR_BY_COUNTRY = { "United States":"USD","Puerto Rico":"USD","Canada":"CAD","United Kingdom":"GBP","Australia":"AUD","New Zealand":"NZD","Switzerland":"CHF","Liechtenstein":"CHF","Mexico":"MXN","Brazil":"BRL","Argentina":"ARS","Chile":"CLP","Colombia":"COP","Peru":"PEN","Ecuador":"USD","Panama":"USD","El Salvador":"USD","United Arab Emirates":"AED","Saudi Arabia":"SAR","Qatar":"QAR","Kuwait":"KWD","Israel":"ILS","Turkey":"TRY","Japan":"JPY","South Korea":"KRW","China":"CNY","Hong Kong":"HKD","Malaysia":"MYR","Philippines":"PHP","Vietnam":"VND" };
+const REGION_CUR = { US:"USD",CA:"CAD",GB:"GBP",AU:"AUD",NZ:"NZD",CH:"CHF",MX:"MXN",BR:"BRL",AR:"ARS",CL:"CLP",CO:"COP",PE:"PEN",AE:"AED",SA:"SAR",QA:"QAR",KW:"KWD",IL:"ILS",TR:"TRY",JP:"JPY",KR:"KRW",CN:"CNY",HK:"HKD",SG:"SGD",MY:"MYR",PH:"PHP",VN:"VND",IN:"INR" };
+let CUR = "EUR";
+try { const saved = localStorage.getItem("cur"); if (saved && CURRENCIES[saved]) CUR = saved; else { const reg = (new Intl.Locale(navigator.language || "en")).maximize().region; if (REGION_CUR[reg]) CUR = REGION_CUR[reg]; } } catch(_) {}
+const money = n => {
+  if (CUR === "EUR") return eur(n);
+  const v = n * CURRENCIES[CUR];
+  try { return new Intl.NumberFormat("en", { style: "currency", currency: CUR, maximumFractionDigits: v >= 1000 ? 0 : 2 }).format(v); } catch(_) { return CUR + " " + v.toFixed(2); }
+};
 const FB_MAP = { ViewContent: "ViewContent", InitiateCheckout: "InitiateCheckout", AddPaymentInfo: "AddPaymentInfo", SubmitForm: "Lead" };
 const ttq_ = (ev, data) => { try { if (window.fbq && window.FB_PIXEL_ID) { if (FB_MAP[ev]) fbq("track", FB_MAP[ev], data || {}); else fbq("trackCustom", ev, data || {}); } } catch(e){} };
 
 // fill static values
 const base = CONFIG.OPTIONS[0];
-$$("[data-price]").forEach(e => e.textContent = money(base.price));
-$$("[data-compare]").forEach(e => { if (base.compare > base.price) e.textContent = money(base.compare); else e.remove(); });
+function renderPrices(){
+  $$("[data-price]").forEach(e => e.textContent = money(base.price));
+  $$("[data-compare]").forEach(e => { if (base.compare > base.price) e.textContent = money(base.compare); });
+  $$("[data-curnote]").forEach(e => e.textContent = CUR === "EUR" ? "" : "Approximate price in " + CUR + ". You'll be charged " + eur(base.price) + " (EUR) at checkout.");
+  $$("[data-optprice]").forEach(e => e.textContent = money(CONFIG.OPTIONS[+e.dataset.optprice].price));
+  if ($("#qtyOpts input:checked")) updateSummary();
+}
 $$("[data-save]").forEach(e => { if (base.compare > base.price) e.textContent = "Save " + Math.round((1 - base.price / base.compare) * 100) + "%"; else e.remove(); });
 $$("[data-delivery]").forEach(e => e.textContent = CONFIG.DELIVERY_DAYS);
 $$("[data-store]").forEach(e => e.textContent = CONFIG.STORE_NAME);
@@ -486,7 +510,7 @@ setColor(0);
 $("#country").innerHTML = CONFIG.COUNTRIES.map((c, i) => `<option ${i === 0 ? "selected" : ""}>${c}</option>`).join("");
 $("#qtyOpts").innerHTML = CONFIG.OPTIONS.map((o, i) => `
   <label><input type="radio" name="qty" value="${i}" ${i === 0 ? "checked" : ""}>
-    <b>${o.label}</b><small>${money(o.price)}${o.badge ? " · " + o.badge : ""}</small></label>`).join("");
+    <b>${o.label}</b><small><span data-optprice="${i}">${money(o.price)}</span>${o.badge ? " · " + o.badge : ""}</small></label>`).join("");
 if (CONFIG.OPTIONS.length === 1) $("#qtyOpts").style.gridTemplateColumns = "1fr";
 
 function updateSummary(){
@@ -494,10 +518,17 @@ function updateSummary(){
   $("#sumSub").textContent = money(o.price);
   $("#sumShip").textContent = CONFIG.SHIPPING_COST ? money(CONFIG.SHIPPING_COST) : "Free";
   $("#sumTot").textContent = money(o.price + CONFIG.SHIPPING_COST);
+  $("#chargeNote").textContent = CUR === "EUR" ? "" : "You'll be charged " + eur(o.price + CONFIG.SHIPPING_COST) + " (EUR). Your bank converts it to " + CUR + ".";
   return o;
 }
 $("#qtyOpts").addEventListener("change", updateSummary);
-updateSummary();
+$("#curSel").innerHTML = Object.keys(CURRENCIES).map(c => `<option value="${c}" ${c === CUR ? "selected" : ""}>${c}</option>`).join("");
+function setCur(c){ if (!CURRENCIES[c]) return; CUR = c; $("#curSel").value = c; try { localStorage.setItem("cur", c); } catch(_) {} renderPrices(); }
+$("#curSel").addEventListener("change", e => setCur(e.target.value));
+$("#country").addEventListener("change", e => { const c = CUR_BY_COUNTRY[e.target.value]; if (c) setCur(c); else if (CUR !== "EUR" && !Object.values(CUR_BY_COUNTRY).includes(CUR)) setCur("EUR"); });
+renderPrices();
+// live exchange rates (fallback to the built-in ones above)
+fetch("https://open.er-api.com/v6/latest/EUR").then(r => r.json()).then(d => { if (d && d.rates) { Object.keys(CURRENCIES).forEach(c => { if (d.rates[c]) CURRENCIES[c] = d.rates[c]; }); renderPrices(); } }).catch(() => {});
 
 // tracking
 ttq_("ViewContent", { content_name: "Dual-Screen Handheld Console", value: base.price, currency: "EUR" });
@@ -545,7 +576,7 @@ $("#orderForm").addEventListener("submit", async e => {
     order_id: "ORD-" + Date.now().toString(36).toUpperCase(),
     date: new Date().toISOString(),
     product: "Dual-Screen Handheld Console",
-    color: data.color, quantity: opt.qty, total: opt.price + CONFIG.SHIPPING_COST,
+    color: data.color, offer: opt.label, display_currency: CUR, quantity: opt.qty, total: opt.price + CONFIG.SHIPPING_COST,
     first_name: data.firstName, last_name: data.lastName, email: data.email, phone: data.phone,
     address: data.address, address2: data.address2, zip: data.zip, city: data.city,
     province: data.province, country: data.country, notes: data.notes,

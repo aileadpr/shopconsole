@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>
+(function(){var L=["bg","cs","da","de","el","en","es","et","fi","fr","ga","hr","hu","it","lt","lv","mt","nl","pl","pt","ro","sk","sl","sv"];var l=null;try{l=localStorage.getItem("lang")}catch(e){}
+if(!l||L.indexOf(l)<0){var n=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||"en"];l="en";for(var i=0;i<n.length;i++){var p=String(n[i]).toLowerCase().split("-")[0];if(L.indexOf(p)>=0){l=p;break;}}}
+window.LANG=l;window.LANGS=L;if(l!=="en")document.write('<script src="i18n/'+l+'.js"><\/script>');})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thank you for your order</title>
 <!-- Meta Pixel -->
@@ -22,15 +27,17 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
 <body>
   <div class="card">
     <div class="ok">✓</div>
-    <h1>Thank you for your order!</h1>
-    <p>Your payment was received. We're preparing your order and you'll receive the tracking number by email as soon as it ships.</p>
+    <h1 data-i18n="ty1">Thank you for your order!</h1>
+    <p data-i18n="ty2">Your payment was received. We're preparing your order and you'll receive the tracking number by email as soon as it ships.</p>
     <p id="ord"></p>
-    <p>Questions? Just reply to the confirmation email and our team will help you within 24 business hours.</p>
+    <p data-i18n="ty3">Questions? Just reply to the confirmation email and our team will help you within 24 business hours.</p>
   </div>
 <script>
+  if (window.I18N) { document.querySelectorAll("[data-i18n]").forEach(e => { const v = window.I18N[e.dataset.i18n]; if (v) e.innerHTML = v; }); if (window.I18N.ty_title) document.title = window.I18N.ty_title; }
+  document.documentElement.lang = window.LANG || "en";
   let o = null;
   try { o = JSON.parse(localStorage.getItem("last_order") || "null"); } catch(_) {}
-  if (o) document.getElementById("ord").innerHTML = 'Order reference: <span class="id">' + o.order_id + '</span>';
+  if (o) document.getElementById("ord").innerHTML = ((window.I18N && window.I18N.ty_ref) || 'Order reference:') + ' <span class="id">' + o.order_id + '</span>';
   try {
     const key = "purchase_tracked_" + (o ? o.order_id : "x");
     if (window.fbq && window.FB_PIXEL_ID && !localStorage.getItem(key)) {

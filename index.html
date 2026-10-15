@@ -1,21 +1,25 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<script>
+(function(){var L=["bg","cs","da","de","el","en","es","et","fi","fr","ga","hr","hu","it","lt","lv","mt","nl","pl","pt","ro","sk","sl","sv"];var l=null;try{l=localStorage.getItem("lang")}catch(e){}
+if(!l||L.indexOf(l)<0){var n=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||"en"];l="en";for(var i=0;i<n.length;i++){var p=String(n[i]).toLowerCase().split("-")[0];if(L.indexOf(p)>=0){l=p;break;}}}
+window.LANG=l;window.LANGS=L;if(l!=="en")document.write('<script src="i18n/'+l+'.js"><\/script>');})();
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Dual-Screen Handheld Console</title>
-<meta name="description" content="Dual-screen handheld game console: 7-inch Full HD 120Hz main screen, second touch screen, Hall-effect joysticks, Android, fan cooling. Tracked shipping, 30-day money-back guarantee, 2-year warranty.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta content="Dual-screen handheld game console: 7-inch Full HD 120Hz main screen, second touch screen, Hall-effect joysticks, Android, fan cooling. Tracked shipping, 30-day money-back guarantee, 2-year warranty." name="description">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <!-- Meta Pixel -->
 <script>
 window.FB_PIXEL_ID = "1440943994610251";   // <- ID pixel Facebook da inserire
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageView'); }
 </script>
-
 <style>
   :root{
     --bg:#ffffff; --bg2:#f6f3fc; --card:#ffffff; --line:#e4dcf3;
@@ -183,234 +187,214 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
 </style>
 </head>
 <body>
-
-<div class="announce">🔥 Buy 1, get 1 FREE &nbsp;·&nbsp; 🚚 Tracked shipping &nbsp;·&nbsp; ✅ 30-day money-back guarantee &nbsp;·&nbsp; 🛡️ 2-year warranty</div>
-<div class="cur-bar"><label for="curSel" style="margin:0">Currency</label><select id="curSel" aria-label="Currency"></select></div>
-
+<div class="announce" data-i18n="t0">🔥 Buy 1, get 1 FREE &nbsp;&middot;&nbsp; 🚚 Tracked shipping &nbsp;&middot;&nbsp; ✅ 30-day money-back guarantee &nbsp;&middot;&nbsp; 🛡️ 2-year warranty</div>
+<div class="cur-bar"><label data-i18n="t1" for="curSel" style="margin:0">Currency</label><select aria-label="Currency" id="curSel"></select><label for="langSel" style="margin:0 0 0 6px">🌐</label><select aria-label="Language" id="langSel"></select></div>
 <!-- ============ HERO ============ -->
 <header class="hero">
-  <div class="wrap hero-grid">
-    <div><div class="img-slot" data-img="hero"></div><div class="swatches" id="heroSwatches"></div></div>
-    <div>
-      <div class="rating">🎮 Two screens · One pocket console</div>
-      <h1>Two screens.<br><span class="accent">Endless games.</span></h1>
-      <p class="lead">The dual-screen handheld console that folds into your pocket. A big main display for your games, a second touch screen for maps, menus and controls, and a classic clamshell design that protects both when you close it.</p>
-      <div class="price-row">
-        <span class="price" data-price></span>
-        <span class="compare" data-compare></span>
-        <span class="save" data-save></span>
-      </div>
-      <p class="cur-note" data-curnote></p>
-      <ul class="checks">
-        <li>7-inch Full HD main screen with smooth 120Hz gameplay</li>
-        <li>Second touch screen for maps, menus, stats and shortcuts</li>
-        <li>Hall-effect joysticks with RGB light rings: no stick drift</li>
-        <li>Android system: play thousands of games, stream and browse</li>
-      </ul>
-      <button class="btn buy" data-cta="hero">Buy now →</button>
-      <div class="trust-row">
-        <div><span>🚚</span>Tracked shipping</div>
-        <div><span>↩️</span>30-day returns</div>
-        <div><span>🔒</span>Secure checkout</div>
-      </div>
-    </div>
-  </div>
+<div class="wrap hero-grid">
+<div><div class="img-slot" data-img="hero"></div><div class="swatches" id="heroSwatches"></div></div>
+<div>
+<div class="rating" data-i18n="t2">🎮 Two screens &middot; One pocket console</div>
+<h1 data-i18n="t3">Two screens.<br><span class="accent">Endless games.</span></h1>
+<p class="lead" data-i18n="t4">The dual-screen handheld console that folds into your pocket. A big main display for your games, a second touch screen for maps, menus and controls, and a classic clamshell design that protects both when you close it.</p>
+<div class="price-row">
+<span class="price" data-price></span>
+<span class="compare" data-compare></span>
+<span class="save" data-save></span>
+</div>
+<p class="cur-note" data-curnote></p>
+<ul class="checks">
+<li data-i18n="t5">7-inch Full HD main screen with smooth 120Hz gameplay</li>
+<li data-i18n="t6">Second touch screen for maps, menus, stats and shortcuts</li>
+<li data-i18n="t7">Hall-effect joysticks with RGB light rings: no stick drift</li>
+<li data-i18n="t8">Android system: play thousands of games, stream and browse</li>
+</ul>
+<button class="btn buy" data-cta="hero" data-i18n="t9">Buy now &rarr;</button>
+<div class="trust-row">
+<div data-i18n="t10"><span>🚚</span>Tracked shipping</div>
+<div data-i18n="t11"><span>&larrhk;️</span>30-day returns</div>
+<div data-i18n="t12"><span>🔒</span>Secure checkout</div>
+</div>
+</div>
+</div>
 </header>
-
 <!-- ============ PROBLEM ============ -->
 <section class="problem">
-  <div class="wrap center">
-    <h2>Gaming on your phone isn't gaming</h2>
-    <p class="muted">Touch controls, notifications and a dying battery ruin every session.</p>
-    <div class="pain-grid" style="text-align:left">
-      <div class="pain"><b>👆</b>Your thumbs cover half the screen with touch controls</div>
-      <div class="pain"><b>🔔</b>Calls and notifications interrupting every match</div>
-      <div class="pain"><b>🪫</b>Your phone battery dead before the end of the day</div>
-      <div class="pain"><b>🧳</b>Big handhelds too heavy and bulky to carry around</div>
-    </div>
-    <div class="cta-block">
-      <button class="btn buy" data-cta="problem">I want a real console →</button>
-    </div>
-  </div>
+<div class="wrap center">
+<h2 data-i18n="t13">Gaming on your phone isn't gaming</h2>
+<p class="muted" data-i18n="t14">Touch controls, notifications and a dying battery ruin every session.</p>
+<div class="pain-grid" style="text-align:left">
+<div class="pain" data-i18n="t15"><b>👆</b>Your thumbs cover half the screen with touch controls</div>
+<div class="pain" data-i18n="t16"><b>🔔</b>Calls and notifications interrupting every match</div>
+<div class="pain" data-i18n="t17"><b>🪫</b>Your phone battery dead before the end of the day</div>
+<div class="pain" data-i18n="t18"><b>🧳</b>Big handhelds too heavy and bulky to carry around</div>
+</div>
+<div class="cta-block">
+<button class="btn buy" data-cta="problem" data-i18n="t19">I want a real console &rarr;</button>
+</div>
+</div>
 </section>
-
 <!-- ============ FEATURES ============ -->
 <section>
-  <div class="wrap center">
-    <h2>Built for play. <span class="accent">Made to carry.</span></h2>
-    <p class="muted">The feel of a real console in a fold-up design that fits in your pocket.</p>
-    <div class="feat-grid" style="text-align:left">
-      <div class="feat"><div class="ico">🖥️</div><h3>Dual screens</h3><p>A 7-inch Full HD main display for the game and a second touch screen below for maps, inventory, menus or performance stats.</p></div>
-      <div class="feat"><div class="ico">⚡</div><h3>120Hz smooth play</h3><p>High refresh rate for fluid motion in fast games, with a one-tap performance mode right on the second screen.</p></div>
-      <div class="feat"><div class="ico">🕹️</div><h3>Hall-effect sticks</h3><p>Magnetic joysticks that don't wear out or drift, surrounded by customizable RGB light rings.</p></div>
-      <div class="feat"><div class="ico">❄️</div><h3>Active cooling</h3><p>A built-in fan keeps temperatures low during long sessions, so performance stays steady.</p></div>
-      <div class="feat"><div class="ico">📂</div><h3>Clamshell design</h3><p>Fold it closed and both screens are protected. Open it and you're playing in a second.</p></div>
-      <div class="feat"><div class="ico">🔋</div><h3>All-day battery</h3><p>A large rechargeable battery for hours of play, with USB-C fast charging.</p></div>
-    </div>
-  </div>
+<div class="wrap center">
+<h2 data-i18n="t20">Built for play. <span class="accent">Made to carry.</span></h2>
+<p class="muted" data-i18n="t21">The feel of a real console in a fold-up design that fits in your pocket.</p>
+<div class="feat-grid" style="text-align:left">
+<div class="feat"><div class="ico">🖥️</div><h3 data-i18n="t22">Dual screens</h3><p data-i18n="t23">A 7-inch Full HD main display for the game and a second touch screen below for maps, inventory, menus or performance stats.</p></div>
+<div class="feat"><div class="ico">⚡</div><h3 data-i18n="t24">120Hz smooth play</h3><p data-i18n="t25">High refresh rate for fluid motion in fast games, with a one-tap performance mode right on the second screen.</p></div>
+<div class="feat"><div class="ico">🕹️</div><h3 data-i18n="t26">Hall-effect sticks</h3><p data-i18n="t27">Magnetic joysticks that don't wear out or drift, surrounded by customizable RGB light rings.</p></div>
+<div class="feat"><div class="ico">❄️</div><h3 data-i18n="t28">Active cooling</h3><p data-i18n="t29">A built-in fan keeps temperatures low during long sessions, so performance stays steady.</p></div>
+<div class="feat"><div class="ico">📂</div><h3 data-i18n="t30">Clamshell design</h3><p data-i18n="t31">Fold it closed and both screens are protected. Open it and you're playing in a second.</p></div>
+<div class="feat"><div class="ico">🔋</div><h3 data-i18n="t32">All-day battery</h3><p data-i18n="t33">A large rechargeable battery for hours of play, with USB-C fast charging.</p></div>
+</div>
+</div>
 </section>
-
 <!-- ============ SPLIT: WHITE ============ -->
 <section style="background:var(--bg2)">
-  <div class="wrap split">
-    <div class="img-slot" data-img="sound"></div>
-    <div>
-      <h2>Your second screen<br><span class="accent">changes everything.</span></h2>
-      <p>Keep the game full-screen on top and put everything else below: the map, your inventory, a walkthrough, a chat or live FPS, temperature and fan stats.</p>
-      <p>Tap to switch performance modes, remap controls or record macros without ever pausing the game.</p>
-      <button class="btn buy" data-cta="sound" style="margin-top:10px">Get yours now →</button>
-    </div>
-  </div>
+<div class="wrap split">
+<div class="img-slot" data-img="sound"></div>
+<div>
+<h2 data-i18n="t34">Your second screen<br><span class="accent">changes everything.</span></h2>
+<p data-i18n="t35">Keep the game full-screen on top and put everything else below: the map, your inventory, a walkthrough, a chat or live FPS, temperature and fan stats.</p>
+<p data-i18n="t36">Tap to switch performance modes, remap controls or record macros without ever pausing the game.</p>
+<button class="btn buy" data-cta="sound" data-i18n="t37" style="margin-top:10px">Get yours now &rarr;</button>
+</div>
+</div>
 </section>
-
 <!-- ============ SPLIT: BLACK ============ -->
 <section>
-  <div class="wrap split rev">
-    <div class="img-slot" data-img="desk"></div>
-    <div>
-      <h2>Pocket size.<br><span class="accent">Console feel.</span></h2>
-      <p>Full-size ABXY buttons, a precise D-pad, shoulder buttons and triggers, plus vibration feedback and stereo speakers. Everything you expect from a home console, folded into a device you can take anywhere.</p>
-      <p>Choose your style: Transparent Purple, Arctic White or Shadow Black.</p>
-    </div>
-  </div>
+<div class="wrap split rev">
+<div class="img-slot" data-img="desk"></div>
+<div>
+<h2 data-i18n="t38">Pocket size.<br><span class="accent">Console feel.</span></h2>
+<p data-i18n="t39">Full-size ABXY buttons, a precise D-pad, shoulder buttons and triggers, plus vibration feedback and stereo speakers. Everything you expect from a home console, folded into a device you can take anywhere.</p>
+<p data-i18n="t40">Choose your style: Transparent Purple, Arctic White or Shadow Black.</p>
+</div>
+</div>
 </section>
-
 <!-- ============ COMPARISON ============ -->
 <section style="background:var(--bg2)">
-  <div class="wrap">
-    <h2 class="center">Why not just use your phone?</h2>
-    <table class="cmp">
-      <tr><th></th><th class="us">This console</th><th>Smartphone</th></tr>
-      <tr><td>Physical buttons and joysticks</td><td class="us y">✓</td><td class="n">✕</td></tr>
-      <tr><td>Second screen for maps and menus</td><td class="us y">✓</td><td class="n">✕</td></tr>
-      <tr><td>Drift-free Hall-effect sticks</td><td class="us y">✓</td><td class="n">✕</td></tr>
-      <tr><td>Active fan cooling</td><td class="us y">✓</td><td class="n">✕</td></tr>
-      <tr><td>No calls or notifications mid-game</td><td class="us y">✓</td><td class="n">✕</td></tr>
-      <tr><td>Phone battery saved for the day</td><td class="us y">✓</td><td class="n">✕</td></tr>
-    </table>
-    <div class="cta-block">
-      <button class="btn buy" data-cta="compare">Buy now →</button>
-    </div>
-  </div>
+<div class="wrap">
+<h2 class="center" data-i18n="t41">Why not just use your phone?</h2>
+<table class="cmp">
+<tr><th></th><th class="us" data-i18n="t42">This console</th><th data-i18n="t43">Smartphone</th></tr>
+<tr><td data-i18n="t44">Physical buttons and joysticks</td><td class="us y">&checkmark;</td><td class="n">✕</td></tr>
+<tr><td data-i18n="t45">Second screen for maps and menus</td><td class="us y">&checkmark;</td><td class="n">✕</td></tr>
+<tr><td data-i18n="t46">Drift-free Hall-effect sticks</td><td class="us y">&checkmark;</td><td class="n">✕</td></tr>
+<tr><td data-i18n="t47">Active fan cooling</td><td class="us y">&checkmark;</td><td class="n">✕</td></tr>
+<tr><td data-i18n="t48">No calls or notifications mid-game</td><td class="us y">&checkmark;</td><td class="n">✕</td></tr>
+<tr><td data-i18n="t49">Phone battery saved for the day</td><td class="us y">&checkmark;</td><td class="n">✕</td></tr>
+</table>
+<div class="cta-block">
+<button class="btn buy" data-cta="compare" data-i18n="t9">Buy now &rarr;</button>
+</div>
+</div>
 </section>
-
 <!-- ============ SPECS ============ -->
 <section>
-  <div class="wrap">
-    <h2 class="center">Specifications</h2>
-    <div class="specs" id="specs"></div>
-  </div>
+<div class="wrap">
+<h2 class="center" data-i18n="t50">Specifications</h2>
+<div class="specs" id="specs"></div>
+</div>
 </section>
-
 <!-- ============ GUARANTEES ============ -->
 <section style="background:var(--bg2)">
-  <div class="wrap">
-    <h2 class="center">Order with <span class="accent">zero risk</span></h2>
-    <div class="guar-grid">
-      <div class="guar"><div class="ico">✅</div><div><h3>30-day money-back</h3><p>Not happy with it? Return it within 30 days of delivery for a full refund.</p></div></div>
-      <div class="guar"><div class="ico">🛡️</div><div><h3>2-year warranty</h3><p>Covered by the 2-year legal guarantee of conformity under EU consumer law.</p></div></div>
-      <div class="guar"><div class="ico">🔄</div><div><h3>Fast replacement</h3><p>Arrived damaged or faulty? We send you a replacement at no extra cost.</p></div></div>
-      <div class="guar"><div class="ico">🚚</div><div><h3>Tracked shipping</h3><p>Tracking number by email as soon as it ships. Delivery in <span data-delivery></span> business days.</p></div></div>
-      <div class="guar"><div class="ico">🔒</div><div><h3>Secure payment</h3><p>Encrypted checkout. We never store your card details.</p></div></div>
-      <div class="guar"><div class="ico">💬</div><div><h3>Real support</h3><p>Our team answers by email within 24 business hours.</p></div></div>
-    </div>
-    <div class="cta-block">
-      <button class="btn buy" data-cta="guarantee">Buy now, risk-free →</button>
-    </div>
-  </div>
+<div class="wrap">
+<h2 class="center" data-i18n="t51">Order with <span class="accent">zero risk</span></h2>
+<div class="guar-grid">
+<div class="guar"><div class="ico">✅</div><div><h3 data-i18n="t52">30-day money-back</h3><p data-i18n="t53">Not happy with it? Return it within 30 days of delivery for a full refund.</p></div></div>
+<div class="guar"><div class="ico">🛡️</div><div><h3 data-i18n="t54">2-year warranty</h3><p data-i18n="t55">Covered by the 2-year legal guarantee of conformity under EU consumer law.</p></div></div>
+<div class="guar"><div class="ico">🔄</div><div><h3 data-i18n="t56">Fast replacement</h3><p data-i18n="t57">Arrived damaged or faulty? We send you a replacement at no extra cost.</p></div></div>
+<div class="guar"><div class="ico">🚚</div><div><h3 data-i18n="t58">Tracked shipping</h3><p data-i18n="t59">Tracking number by email as soon as it ships. Delivery in <span data-delivery></span> business days.</p></div></div>
+<div class="guar"><div class="ico">🔒</div><div><h3 data-i18n="t60">Secure payment</h3><p data-i18n="t61">Encrypted checkout. We never store your card details.</p></div></div>
+<div class="guar"><div class="ico">💬</div><div><h3 data-i18n="t62">Real support</h3><p data-i18n="t63">Our team answers by email within 24 business hours.</p></div></div>
+</div>
+<div class="cta-block">
+<button class="btn buy" data-cta="guarantee" data-i18n="t64">Buy now, risk-free &rarr;</button>
+</div>
+</div>
 </section>
-
 <!-- ============ FAQ ============ -->
 <section>
-  <div class="wrap" style="max-width:760px">
-    <h2 class="center">FAQ</h2>
-    <div class="faq">
-      <details><summary>What games can I play?</summary><p>It runs Android, so you can install games from the Play Store, use cloud gaming and streaming apps, and play your own compatible game library. The physical controls work with any game that supports a controller.</p></details>
-      <details><summary>What is the second screen for?</summary><p>It's a touch screen you can use for maps, inventory, menus, a walkthrough or a chat while the game stays full-screen on top. It also shows FPS, temperature and fan speed, and gives one-tap access to performance modes and control settings.</p></details>
-      <details><summary>Will the joysticks drift?</summary><p>No. The Hall-effect joysticks use magnets instead of physical contacts, so they don't wear out and don't develop the drift common on traditional sticks.</p></details>
-      <details><summary>Can I connect it to Wi-Fi and Bluetooth?</summary><p>Yes. It has Wi-Fi for downloads and streaming and Bluetooth for headphones and controllers.</p></details>
-      <details><summary>How do I charge it?</summary><p>Through the USB-C port with fast charging. You can keep playing while it charges.</p></details>
-      <details><summary>How long does delivery take?</summary><p>Your order ships with tracking and arrives in <span data-delivery></span> business days. You'll get the tracking number by email.</p></details>
-      <details><summary>What if I don't like it?</summary><p>You have 30 days from delivery to return it for a full refund. Just email us and we'll guide you through it.</p></details>
-    </div>
-  </div>
+<div class="wrap" style="max-width:760px">
+<h2 class="center" data-i18n="t65">FAQ</h2>
+<div class="faq">
+<details><summary data-i18n="t66">What games can I play?</summary><p data-i18n="t67">It runs Android, so you can install games from the Play Store, use cloud gaming and streaming apps, and play your own compatible game library. The physical controls work with any game that supports a controller.</p></details>
+<details><summary data-i18n="t68">What is the second screen for?</summary><p data-i18n="t69">It's a touch screen you can use for maps, inventory, menus, a walkthrough or a chat while the game stays full-screen on top. It also shows FPS, temperature and fan speed, and gives one-tap access to performance modes and control settings.</p></details>
+<details><summary data-i18n="t70">Will the joysticks drift?</summary><p data-i18n="t71">No. The Hall-effect joysticks use magnets instead of physical contacts, so they don't wear out and don't develop the drift common on traditional sticks.</p></details>
+<details><summary data-i18n="t72">Can I connect it to Wi-Fi and Bluetooth?</summary><p data-i18n="t73">Yes. It has Wi-Fi for downloads and streaming and Bluetooth for headphones and controllers.</p></details>
+<details><summary data-i18n="t74">How do I charge it?</summary><p data-i18n="t75">Through the USB-C port with fast charging. You can keep playing while it charges.</p></details>
+<details><summary data-i18n="t76">How long does delivery take?</summary><p data-i18n="t77">Your order ships with tracking and arrives in <span data-delivery></span> business days. You'll get the tracking number by email.</p></details>
+<details><summary data-i18n="t78">What if I don't like it?</summary><p data-i18n="t79">You have 30 days from delivery to return it for a full refund. Just email us and we'll guide you through it.</p></details>
+</div>
+</div>
 </section>
-
 <!-- ============ ORDER FORM ============ -->
 <section class="order" id="order">
-  <div class="wrap">
-    <h2 class="center">Complete your order</h2>
-    <p class="center muted">Fill in your shipping details, then continue to secure payment.</p>
-
-    <form class="order-card" id="orderForm" novalidate>
-      <h3>1. Choose your option</h3>
-      <label>Color</label>
-      <div class="color-opts" id="colorOpts"></div>
-      <input type="hidden" id="color" name="color">
-      <div class="qty-opts" id="qtyOpts"></div>
-
-      <h3>2. Contact</h3>
-      <div class="row two">
-        <div><label for="firstName">First name *</label><input id="firstName" name="firstName" autocomplete="given-name" required></div>
-        <div><label for="lastName">Last name *</label><input id="lastName" name="lastName" autocomplete="family-name" required></div>
-      </div>
-      <div class="row two">
-        <div><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
-        <div><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
-      </div>
-
-      <h3>3. Shipping address</h3>
-      <div class="row">
-        <div><label for="address">Street address and number *</label><input id="address" name="address" autocomplete="address-line1" required></div>
-      </div>
-      <div class="row">
-        <div><label for="address2">Apartment, floor, buzzer (optional)</label><input id="address2" name="address2" autocomplete="address-line2"></div>
-      </div>
-      <div class="row three">
-        <div><label for="zip">Postal code *</label><input id="zip" name="zip" autocomplete="postal-code" required></div>
-        <div><label for="city">City *</label><input id="city" name="city" autocomplete="address-level2" required></div>
-        <div><label for="province">Province / State</label><input id="province" name="province" autocomplete="address-level1"></div>
-      </div>
-      <div class="row">
-        <div><label for="country">Country *</label><select id="country" name="country" autocomplete="country-name" required></select></div>
-      </div>
-      <div class="row">
-        <div><label for="notes">Notes (optional, e.g. a different color for each console)</label><textarea id="notes" name="notes" rows="2"></textarea></div>
-      </div>
-
-      <div class="summary">
-        <div><span>Subtotal</span><span id="sumSub"></span></div>
-        <div><span>Shipping</span><span id="sumShip"></span></div>
-        <div class="tot"><span>Total</span><span id="sumTot"></span></div>
-        <div class="charge-note" id="chargeNote"></div>
-      </div>
-
-
-      <div class="form-err" id="formErr">Please fill in all required fields.</div>
-      <button type="submit" class="btn" id="submitBtn">Continue to secure payment →</button>
-      <div class="secure"><span>🔒 SSL encrypted</span><span>💳 Card payment</span><span>✅ 30-day guarantee</span></div>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <p style="margin-bottom:10px">
-      <a href="#" data-link="shipping">Shipping</a>
-      <a href="#" data-link="refund">Refund policy</a>
-      <a href="#" data-link="privacy">Privacy</a>
-      <a href="#" data-link="terms">Terms</a>
-      <a href="#" data-link="contact">Contact</a>
-    </p>
-    <p>© <span id="yr"></span> <span data-store></span>. All rights reserved.</p>
-  </div>
-</footer>
-
-<div class="sticky" id="sticky">
-  <div class="sp"><b data-price></b><s data-compare></s></div>
-  <button class="btn buy" data-cta="sticky">Buy now →</button>
+<div class="wrap">
+<h2 class="center" data-i18n="t80">Complete your order</h2>
+<p class="center muted" data-i18n="t81">Fill in your shipping details, then continue to secure payment.</p>
+<form class="order-card" id="orderForm" novalidate>
+<h3 data-i18n="t82">1. Choose your option</h3>
+<label data-i18n="t83">Color</label>
+<div class="color-opts" id="colorOpts"></div>
+<input id="color" name="color" type="hidden">
+<div class="qty-opts" id="qtyOpts"></div>
+<h3 data-i18n="t84">2. Contact</h3>
+<div class="row two">
+<div><label data-i18n="t85" for="firstName">First name *</label><input autocomplete="given-name" id="firstName" name="firstName" required></div>
+<div><label data-i18n="t86" for="lastName">Last name *</label><input autocomplete="family-name" id="lastName" name="lastName" required></div>
 </div>
-
+<div class="row two">
+<div><label data-i18n="t87" for="email">Email *</label><input autocomplete="email" id="email" inputmode="email" name="email" required type="email"></div>
+<div><label data-i18n="t88" for="phone">Phone *</label><input autocomplete="tel" id="phone" inputmode="tel" name="phone" required type="tel"></div>
+</div>
+<h3 data-i18n="t89">3. Shipping address</h3>
+<div class="row">
+<div><label data-i18n="t90" for="address">Street address and number *</label><input autocomplete="address-line1" id="address" name="address" required></div>
+</div>
+<div class="row">
+<div><label data-i18n="t91" for="address2">Apartment, floor, buzzer (optional)</label><input autocomplete="address-line2" id="address2" name="address2"></div>
+</div>
+<div class="row three">
+<div><label data-i18n="t92" for="zip">Postal code *</label><input autocomplete="postal-code" id="zip" name="zip" required></div>
+<div><label data-i18n="t93" for="city">City *</label><input autocomplete="address-level2" id="city" name="city" required></div>
+<div><label data-i18n="t94" for="province">Province / State</label><input autocomplete="address-level1" id="province" name="province"></div>
+</div>
+<div class="row">
+<div><label data-i18n="t95" for="country">Country *</label><select autocomplete="country-name" id="country" name="country" required></select></div>
+</div>
+<div class="row">
+<div><label data-i18n="t96" for="notes">Notes (optional, e.g. a different color for each console)</label><textarea id="notes" name="notes" rows="2"></textarea></div>
+</div>
+<div class="summary">
+<div><span data-i18n="t97">Subtotal</span><span id="sumSub"></span></div>
+<div><span data-i18n="t98">Shipping</span><span id="sumShip"></span></div>
+<div class="tot"><span data-i18n="t99">Total</span><span id="sumTot"></span></div>
+<div class="charge-note" id="chargeNote"></div>
+</div>
+<div class="form-err" data-i18n="t100" id="formErr">Please fill in all required fields.</div>
+<button class="btn" data-i18n="t101" id="submitBtn" type="submit">Continue to secure payment &rarr;</button>
+<div class="secure"><span data-i18n="t102">🔒 SSL encrypted</span><span data-i18n="t103">💳 Card payment</span><span data-i18n="t104">✅ 30-day guarantee</span></div>
+</form>
+</div>
+</section>
+<footer>
+<div class="wrap">
+<p data-i18n="t105" style="margin-bottom:10px">
+<a data-link="shipping" href="#">Shipping</a>
+<a data-link="refund" href="#">Refund policy</a>
+<a data-link="privacy" href="#">Privacy</a>
+<a data-link="terms" href="#">Terms</a>
+<a data-link="contact" href="#">Contact</a>
+</p>
+<p data-i18n="t106">&copy; <span id="yr"></span> <span data-store></span>. All rights reserved.</p>
+</div>
+</footer>
+<div class="sticky" id="sticky">
+<div class="sp"><b data-price></b><s data-compare></s></div>
+<button class="btn buy" data-cta="sticky" data-i18n="t9">Buy now &rarr;</button>
+</div>
 <script>
 /* ==================================================================
    CONFIGURAZIONE: modifica solo questa parte
@@ -461,6 +445,12 @@ const CONFIG = {
 /* ================================================================== */
 
 const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
+const LANG = window.LANG || "en";
+const t = (k, en) => (window.I18N && window.I18N[k]) || en;
+if (window.I18N) { $$("[data-i18n]").forEach(e => { const v = window.I18N[e.dataset.i18n]; if (v) e.innerHTML = v; }); if (window.I18N.title) document.title = window.I18N.title; }
+document.documentElement.lang = LANG;
+const CC = {"Italy":"IT","Afghanistan":"AF","Albania":"AL","American Samoa":"AS","Andorra":"AD","Anguilla":"AI","Antigua and Barbuda":"AG","Argentina":"AR","Armenia":"AM","Aruba":"AW","Australia":"AU","Austria":"AT","Azerbaijan":"AZ","Bahamas":"BS","Bahrain":"BH","Barbados":"BB","Belgium":"BE","Belize":"BZ","Bermuda":"BM","Bhutan":"BT","Bolivia":"BO","Bonaire":"BQ","Bosnia and Herzegovina":"BA","Brazil":"BR","British Virgin Islands":"VG","Brunei":"BN","Bulgaria":"BG","Cambodia":"KH","Canada":"CA","Cayman Islands":"KY","Chile":"CL","China":"CN","Colombia":"CO","Cook Islands":"CK","Costa Rica":"CR","Croatia":"HR","Cuba":"CU","Curaçao":"CW","Cyprus":"CY","Czech Republic":"CZ","Denmark":"DK","Dominica":"DM","Dominican Republic":"DO","Ecuador":"EC","El Salvador":"SV","Estonia":"EE","Falkland Islands":"FK","Fiji":"FJ","Finland":"FI","France":"FR","French Guiana":"GF","French Polynesia":"PF","Georgia":"GE","Germany":"DE","Greece":"GR","Greenland":"GL","Grenada":"GD","Guadeloupe":"GP","Guam":"GU","Guatemala":"GT","Guyana":"GY","Haiti":"HT","Honduras":"HN","Hong Kong":"HK","Hungary":"HU","Iceland":"IS","Iraq":"IQ","Ireland":"IE","Israel":"IL","Jamaica":"JM","Japan":"JP","Jordan":"JO","Kazakhstan":"KZ","Kiribati":"KI","Kosovo":"XK","Kuwait":"KW","Kyrgyzstan":"KG","Laos":"LA","Latvia":"LV","Lebanon":"LB","Liechtenstein":"LI","Lithuania":"LT","Luxembourg":"LU","Macau":"MO","Malaysia":"MY","Maldives":"MV","Malta":"MT","Marshall Islands":"MH","Martinique":"MQ","Mexico":"MX","Micronesia":"FM","Moldova":"MD","Monaco":"MC","Mongolia":"MN","Montenegro":"ME","Montserrat":"MS","Myanmar":"MM","Nauru":"NR","Netherlands":"NL","New Caledonia":"NC","New Zealand":"NZ","Nicaragua":"NI","Niue":"NU","Norfolk Island":"NF","North Macedonia":"MK","Northern Mariana Islands":"MP","Norway":"NO","Oman":"OM","Palau":"PW","Panama":"PA","Papua New Guinea":"PG","Paraguay":"PY","Peru":"PE","Philippines":"PH","Pitcairn Islands":"PN","Poland":"PL","Portugal":"PT","Puerto Rico":"PR","Qatar":"QA","Romania":"RO","Saint Barthélemy":"BL","Saint Kitts and Nevis":"KN","Saint Lucia":"LC","Saint Martin":"MF","Saint Pierre and Miquelon":"PM","Saint Vincent and the Grenadines":"VC","Samoa":"WS","San Marino":"SM","Saudi Arabia":"SA","Serbia":"RS","Sint Maarten":"SX","Slovakia":"SK","Slovenia":"SI","Solomon Islands":"SB","South Korea":"KR","Spain":"ES","Suriname":"SR","Sweden":"SE","Switzerland":"CH","Syria":"SY","Timor-Leste":"TL","Tokelau":"TK","Tonga":"TO","Trinidad and Tobago":"TT","Turkey":"TR","Turkmenistan":"TM","Turks and Caicos Islands":"TC","Tuvalu":"TV","U.S. Virgin Islands":"VI","Ukraine":"UA","United Arab Emirates":"AE","United Kingdom":"GB","United States":"US","Uruguay":"UY","Uzbekistan":"UZ","Vanuatu":"VU","Vatican City":"VA","Venezuela":"VE","Vietnam":"VN","Wallis and Futuna":"WF"};
+const countryName = (() => { try { const dn = new Intl.DisplayNames([LANG], { type: "region" }); return n => { const c = CC[n], v = c && dn.of(c); return v && v !== c ? v : n; }; } catch(_) { return n => n; } })();
 const eur = n => "€" + n.toFixed(2).replace(".", ",");
 /* Currency display: prices are converted for display only; Lumino charges in EUR. */
 const CURRENCIES = { EUR:1, USD:1.16, GBP:0.87, CAD:1.62, AUD:1.78, NZD:1.98, CHF:0.94, MXN:21.6, BRL:6.3, ARS:1500, CLP:1100, COP:4600, PEN:4.1, AED:4.26, SAR:4.35, QAR:4.22, KWD:0.36, ILS:3.9, TRY:48, JPY:175, KRW:1620, CNY:8.3, HKD:9.05, SGD:1.5, MYR:4.9, PHP:66, VND:30500, INR:102 };
@@ -481,11 +471,11 @@ const base = CONFIG.OPTIONS[0];
 function renderPrices(){
   $$("[data-price]").forEach(e => e.textContent = money(base.price));
   $$("[data-compare]").forEach(e => { if (base.compare > base.price) e.textContent = money(base.compare); });
-  $$("[data-curnote]").forEach(e => e.textContent = CUR === "EUR" ? "" : "Approximate price in " + CUR + ". You'll be charged " + eur(base.price) + " (EUR) at checkout.");
+  $$("[data-curnote]").forEach(e => e.textContent = CUR === "EUR" ? "" : t("cur_note", "Approximate price in {cur}. You'll be charged {eur} (EUR) at checkout.").replace("{cur}", CUR).replace("{eur}", eur(base.price)));
   $$("[data-optprice]").forEach(e => e.textContent = money(CONFIG.OPTIONS[+e.dataset.optprice].price));
   if ($("#qtyOpts input:checked")) updateSummary();
 }
-$$("[data-save]").forEach(e => { if (base.compare > base.price) e.textContent = "Save " + Math.round((1 - base.price / base.compare) * 100) + "%"; else e.remove(); });
+$$("[data-save]").forEach(e => { if (base.compare > base.price) e.textContent = t("save", "Save {p}%").replace("{p}", Math.round((1 - base.price / base.compare) * 100)); else e.remove(); });
 $$("[data-delivery]").forEach(e => e.textContent = CONFIG.DELIVERY_DAYS);
 $$("[data-store]").forEach(e => e.textContent = CONFIG.STORE_NAME);
 $$("[data-link]").forEach(a => a.href = CONFIG.LINKS[a.dataset.link] || "#");
@@ -496,9 +486,9 @@ $$("[data-img]").forEach(slot => {
   if (url) { slot.classList.add("has-img"); slot.innerHTML = `<img src="${url}" alt="Dual-screen handheld console" loading="${slot.dataset.img === 'hero' ? 'eager' : 'lazy'}">`; }
 });
 
-$("#specs").innerHTML = CONFIG.SPECS.map(([k, v]) => `<div><span>${k}</span><span>${v}</span></div>`).join("");
-$("#heroSwatches").innerHTML = CONFIG.COLORS.map((c, i) => `<button type="button" class="sw${i === 0 ? " on" : ""}" data-i="${i}"><img src="${c.img}" alt="${c.name}">${c.name}</button>`).join("");
-$("#colorOpts").innerHTML = CONFIG.COLORS.map((c, i) => `<button type="button" class="sw${i === 0 ? " on" : ""}" data-i="${i}"><img src="${c.img}" alt="${c.name}">${c.name}</button>`).join("");
+$("#specs").innerHTML = CONFIG.SPECS.map(([k, v], i) => `<div><span>${t("spec_k" + i, k)}</span><span>${t("spec_v" + i, v)}</span></div>`).join("");
+$("#heroSwatches").innerHTML = CONFIG.COLORS.map((c, i) => `<button type="button" class="sw${i === 0 ? " on" : ""}" data-i="${i}"><img src="${c.img}" alt="${t("color" + i, c.name)}">${t("color" + i, c.name)}</button>`).join("");
+$("#colorOpts").innerHTML = CONFIG.COLORS.map((c, i) => `<button type="button" class="sw${i === 0 ? " on" : ""}" data-i="${i}"><img src="${c.img}" alt="${t("color" + i, c.name)}">${t("color" + i, c.name)}</button>`).join("");
 function setColor(i){
   const c = CONFIG.COLORS[i];
   $("#color").value = c.name;
@@ -507,18 +497,21 @@ function setColor(i){
 }
 $$("#heroSwatches .sw, #colorOpts .sw").forEach(b => b.addEventListener("click", () => setColor(+b.dataset.i)));
 setColor(0);
-$("#country").innerHTML = CONFIG.COUNTRIES.map((c, i) => `<option ${i === 0 ? "selected" : ""}>${c}</option>`).join("");
+const DEFAULT_COUNTRY = (() => { try { const reg = (new Intl.Locale(navigator.language || "en")).maximize().region; const hit = CONFIG.COUNTRIES.find(c => CC[c] === reg); if (hit) return hit; } catch(_) {} return CONFIG.COUNTRIES[0]; })();
+$("#country").innerHTML = [...CONFIG.COUNTRIES].sort((a, b) => countryName(a).localeCompare(countryName(b), LANG)).map(c => `<option value="${c}" ${c === DEFAULT_COUNTRY ? "selected" : ""}>${countryName(c)}</option>`).join("");
+$("#langSel").innerHTML = (window.LANGS || ["en"]).map(l => { let n = l; try { n = new Intl.DisplayNames([l], { type: "language" }).of(l); n = n.charAt(0).toUpperCase() + n.slice(1); } catch(_) {} return `<option value="${l}" ${l === LANG ? "selected" : ""}>${n}</option>`; }).join("");
+$("#langSel").addEventListener("change", e => { try { localStorage.setItem("lang", e.target.value); } catch(_) {} location.reload(); });
 $("#qtyOpts").innerHTML = CONFIG.OPTIONS.map((o, i) => `
   <label><input type="radio" name="qty" value="${i}" ${i === 0 ? "checked" : ""}>
-    <b>${o.label}</b><small><span data-optprice="${i}">${money(o.price)}</span>${o.badge ? " · " + o.badge : ""}</small></label>`).join("");
+    <b>${t("opt" + i, o.label)}</b><small><span data-optprice="${i}">${money(o.price)}</span>${o.badge ? " · " + t("badge", o.badge) : ""}</small></label>`).join("");
 if (CONFIG.OPTIONS.length === 1) $("#qtyOpts").style.gridTemplateColumns = "1fr";
 
 function updateSummary(){
   const o = CONFIG.OPTIONS[+document.querySelector("input[name=qty]:checked").value];
   $("#sumSub").textContent = money(o.price);
-  $("#sumShip").textContent = CONFIG.SHIPPING_COST ? money(CONFIG.SHIPPING_COST) : "Free";
+  $("#sumShip").textContent = CONFIG.SHIPPING_COST ? money(CONFIG.SHIPPING_COST) : t("free", "Free");
   $("#sumTot").textContent = money(o.price + CONFIG.SHIPPING_COST);
-  $("#chargeNote").textContent = CUR === "EUR" ? "" : "You'll be charged " + eur(o.price + CONFIG.SHIPPING_COST) + " (EUR). Your bank converts it to " + CUR + ".";
+  $("#chargeNote").textContent = CUR === "EUR" ? "" : t("cur_charge", "You'll be charged {eur} (EUR). Your bank converts it to {cur}.").replace("{eur}", eur(o.price + CONFIG.SHIPPING_COST)).replace("{cur}", CUR);
   return o;
 }
 $("#qtyOpts").addEventListener("change", updateSummary);
@@ -561,7 +554,7 @@ $("#orderForm").addEventListener("submit", async e => {
     if (bad) ok = false;
   });
   if (!ok) {
-    err.textContent = "Please fill in all required fields correctly.";
+    err.textContent = t("err_fields", "Please fill in all required fields correctly.");
     err.style.display = "block";
     f.querySelector(".err")?.scrollIntoView({ behavior: "smooth", block: "center" });
     return;
@@ -585,7 +578,7 @@ $("#orderForm").addEventListener("submit", async e => {
   };
 
   const btn = $("#submitBtn");
-  btn.disabled = true; btn.textContent = "Redirecting to secure payment…";
+  btn.disabled = true; btn.textContent = t("redirecting", "Redirecting to secure payment…");
   ttq_("SubmitForm");
   ttq_("AddPaymentInfo", { value: payload.total, currency: "EUR" });
   try { localStorage.setItem("last_order", JSON.stringify(payload)); } catch(_) {}
@@ -606,7 +599,6 @@ $("#orderForm").addEventListener("submit", async e => {
   window.location.href = opt.lumino;
 });
 </script>
-
 <!-- ==================================================================
      GOOGLE SHEETS (opzionale): per ricevere gli ordini in un foglio
      1. Crea un Google Sheet → Estensioni → Apps Script

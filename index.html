@@ -589,6 +589,13 @@ $("#orderForm").addEventListener("submit", async e => {
       fd.append("_subject", "New order " + payload.order_id + " – " + payload.product + " – €" + payload.total.toFixed(2));
       fd.append("_template", "table");
       fd.append("_captcha", "false");
+      // automatic email to the customer: order confirmation + payment link if not completed
+      fd.append("_autoresponse",
+        "Hi " + payload.first_name + ",\n\n" +
+        "thank you for your order request " + payload.order_id + " (" + opt.label + " – €" + payload.total.toFixed(2) + ").\n\n" +
+        "If your payment didn't go through, your offer is still reserved. You can complete your order here:\n" + opt.lumino + "\n\n" +
+        "If you have already paid, no action is needed: you'll receive your tracking number by email as soon as your order ships.\n\n" +
+        "Any questions? Just reply to this email.\n\nCustomer Service");
       Object.entries(payload).forEach(([k, v]) => fd.append(k, v == null ? "" : String(v)));
       await Promise.race([
         fetch(CONFIG.WEBHOOK_URL, { method: "POST", mode: "no-cors", keepalive: true, body: fd }),

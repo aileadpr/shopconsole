@@ -401,7 +401,7 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
    ================================================================== */
 const CONFIG = {
   STORE_NAME: "Your Store",
-  CURRENCY: "€",
+  CURRENCY: "$",
 
   // Prezzo per quantità. Ogni opzione ha il SUO link di pagamento Lumino.
   OPTIONS: [
@@ -451,15 +451,15 @@ if (window.I18N) { $$("[data-i18n]").forEach(e => { const v = window.I18N[e.data
 document.documentElement.lang = LANG;
 const CC = {"Italy":"IT","Afghanistan":"AF","Albania":"AL","American Samoa":"AS","Andorra":"AD","Anguilla":"AI","Antigua and Barbuda":"AG","Argentina":"AR","Armenia":"AM","Aruba":"AW","Australia":"AU","Austria":"AT","Azerbaijan":"AZ","Bahamas":"BS","Bahrain":"BH","Barbados":"BB","Belgium":"BE","Belize":"BZ","Bermuda":"BM","Bhutan":"BT","Bolivia":"BO","Bonaire":"BQ","Bosnia and Herzegovina":"BA","Brazil":"BR","British Virgin Islands":"VG","Brunei":"BN","Bulgaria":"BG","Cambodia":"KH","Canada":"CA","Cayman Islands":"KY","Chile":"CL","China":"CN","Colombia":"CO","Cook Islands":"CK","Costa Rica":"CR","Croatia":"HR","Cuba":"CU","Curaçao":"CW","Cyprus":"CY","Czech Republic":"CZ","Denmark":"DK","Dominica":"DM","Dominican Republic":"DO","Ecuador":"EC","El Salvador":"SV","Estonia":"EE","Falkland Islands":"FK","Fiji":"FJ","Finland":"FI","France":"FR","French Guiana":"GF","French Polynesia":"PF","Georgia":"GE","Germany":"DE","Greece":"GR","Greenland":"GL","Grenada":"GD","Guadeloupe":"GP","Guam":"GU","Guatemala":"GT","Guyana":"GY","Haiti":"HT","Honduras":"HN","Hong Kong":"HK","Hungary":"HU","Iceland":"IS","Iraq":"IQ","Ireland":"IE","Israel":"IL","Jamaica":"JM","Japan":"JP","Jordan":"JO","Kazakhstan":"KZ","Kiribati":"KI","Kosovo":"XK","Kuwait":"KW","Kyrgyzstan":"KG","Laos":"LA","Latvia":"LV","Lebanon":"LB","Liechtenstein":"LI","Lithuania":"LT","Luxembourg":"LU","Macau":"MO","Malaysia":"MY","Maldives":"MV","Malta":"MT","Marshall Islands":"MH","Martinique":"MQ","Mexico":"MX","Micronesia":"FM","Moldova":"MD","Monaco":"MC","Mongolia":"MN","Montenegro":"ME","Montserrat":"MS","Myanmar":"MM","Nauru":"NR","Netherlands":"NL","New Caledonia":"NC","New Zealand":"NZ","Nicaragua":"NI","Niue":"NU","Norfolk Island":"NF","North Macedonia":"MK","Northern Mariana Islands":"MP","Norway":"NO","Oman":"OM","Palau":"PW","Panama":"PA","Papua New Guinea":"PG","Paraguay":"PY","Peru":"PE","Philippines":"PH","Pitcairn Islands":"PN","Poland":"PL","Portugal":"PT","Puerto Rico":"PR","Qatar":"QA","Romania":"RO","Saint Barthélemy":"BL","Saint Kitts and Nevis":"KN","Saint Lucia":"LC","Saint Martin":"MF","Saint Pierre and Miquelon":"PM","Saint Vincent and the Grenadines":"VC","Samoa":"WS","San Marino":"SM","Saudi Arabia":"SA","Serbia":"RS","Sint Maarten":"SX","Slovakia":"SK","Slovenia":"SI","Solomon Islands":"SB","South Korea":"KR","Spain":"ES","Suriname":"SR","Sweden":"SE","Switzerland":"CH","Syria":"SY","Timor-Leste":"TL","Tokelau":"TK","Tonga":"TO","Trinidad and Tobago":"TT","Turkey":"TR","Turkmenistan":"TM","Turks and Caicos Islands":"TC","Tuvalu":"TV","U.S. Virgin Islands":"VI","Ukraine":"UA","United Arab Emirates":"AE","United Kingdom":"GB","United States":"US","Uruguay":"UY","Uzbekistan":"UZ","Vanuatu":"VU","Vatican City":"VA","Venezuela":"VE","Vietnam":"VN","Wallis and Futuna":"WF"};
 const countryName = (() => { try { const dn = new Intl.DisplayNames([LANG], { type: "region" }); return n => { const c = CC[n], v = c && dn.of(c); return v && v !== c ? v : n; }; } catch(_) { return n => n; } })();
-const eur = n => "€" + n.toFixed(2).replace(".", ",");
-/* Currency display: prices are converted for display only; Lumino charges in EUR. */
-const CURRENCIES = { EUR:1, USD:1.16, GBP:0.87, CAD:1.62, AUD:1.78, NZD:1.98, CHF:0.94, MXN:21.6, BRL:6.3, ARS:1500, CLP:1100, COP:4600, PEN:4.1, AED:4.26, SAR:4.35, QAR:4.22, KWD:0.36, ILS:3.9, TRY:48, JPY:175, KRW:1620, CNY:8.3, HKD:9.05, SGD:1.5, MYR:4.9, PHP:66, VND:30500, INR:102 };
+const eur = n => "$" + n.toFixed(2);
+/* Currency display: prices are converted for display only; Lumino charges in USD. */
+const CURRENCIES = { USD:1, EUR:0.86, GBP:0.75, CAD:1.4, AUD:1.53, NZD:1.71, CHF:0.81, MXN:18.62, BRL:5.43, ARS:1293, CLP:948, COP:3966, PEN:3.53, AED:3.67, SAR:3.75, QAR:3.64, KWD:0.31, ILS:3.36, TRY:41.38, JPY:151, KRW:1397, CNY:7.16, HKD:7.8, SGD:1.29, MYR:4.22, PHP:56.9, VND:26293, INR:87.93 };
 const CUR_BY_COUNTRY = { "United States":"USD","Puerto Rico":"USD","Canada":"CAD","United Kingdom":"GBP","Australia":"AUD","New Zealand":"NZD","Switzerland":"CHF","Liechtenstein":"CHF","Mexico":"MXN","Brazil":"BRL","Argentina":"ARS","Chile":"CLP","Colombia":"COP","Peru":"PEN","Ecuador":"USD","Panama":"USD","El Salvador":"USD","United Arab Emirates":"AED","Saudi Arabia":"SAR","Qatar":"QAR","Kuwait":"KWD","Israel":"ILS","Turkey":"TRY","Japan":"JPY","South Korea":"KRW","China":"CNY","Hong Kong":"HKD","Malaysia":"MYR","Philippines":"PHP","Vietnam":"VND" };
 const REGION_CUR = { US:"USD",CA:"CAD",GB:"GBP",AU:"AUD",NZ:"NZD",CH:"CHF",MX:"MXN",BR:"BRL",AR:"ARS",CL:"CLP",CO:"COP",PE:"PEN",AE:"AED",SA:"SAR",QA:"QAR",KW:"KWD",IL:"ILS",TR:"TRY",JP:"JPY",KR:"KRW",CN:"CNY",HK:"HKD",SG:"SGD",MY:"MYR",PH:"PHP",VN:"VND",IN:"INR" };
-let CUR = "EUR";
+let CUR = "USD";
 try { const saved = localStorage.getItem("cur"); if (saved && CURRENCIES[saved]) CUR = saved; else { const reg = (new Intl.Locale(navigator.language || "en")).maximize().region; if (REGION_CUR[reg]) CUR = REGION_CUR[reg]; } } catch(_) {}
 const money = n => {
-  if (CUR === "EUR") return eur(n);
+  if (CUR === "USD") return eur(n);
   const v = n * CURRENCIES[CUR];
   try { return new Intl.NumberFormat("en", { style: "currency", currency: CUR, maximumFractionDigits: v >= 1000 ? 0 : 2 }).format(v); } catch(_) { return CUR + " " + v.toFixed(2); }
 };
@@ -471,7 +471,7 @@ const base = CONFIG.OPTIONS[0];
 function renderPrices(){
   $$("[data-price]").forEach(e => e.textContent = money(base.price));
   $$("[data-compare]").forEach(e => { if (base.compare > base.price) e.textContent = money(base.compare); });
-  $$("[data-curnote]").forEach(e => e.textContent = CUR === "EUR" ? "" : t("cur_note", "Approximate price in {cur}. You'll be charged {eur} (EUR) at checkout.").replace("{cur}", CUR).replace("{eur}", eur(base.price)));
+  $$("[data-curnote]").forEach(e => e.textContent = CUR === "USD" ? "" : t("cur_note", "Approximate price in {cur}. You'll be charged {eur} (USD) at checkout.").replace("{cur}", CUR).replace("{eur}", eur(base.price)));
   $$("[data-optprice]").forEach(e => e.textContent = money(CONFIG.OPTIONS[+e.dataset.optprice].price));
   if ($("#qtyOpts input:checked")) updateSummary();
 }
@@ -511,20 +511,20 @@ function updateSummary(){
   $("#sumSub").textContent = money(o.price);
   $("#sumShip").textContent = CONFIG.SHIPPING_COST ? money(CONFIG.SHIPPING_COST) : t("free", "Free");
   $("#sumTot").textContent = money(o.price + CONFIG.SHIPPING_COST);
-  $("#chargeNote").textContent = CUR === "EUR" ? "" : t("cur_charge", "You'll be charged {eur} (EUR). Your bank converts it to {cur}.").replace("{eur}", eur(o.price + CONFIG.SHIPPING_COST)).replace("{cur}", CUR);
+  $("#chargeNote").textContent = CUR === "USD" ? "" : t("cur_charge", "You'll be charged {eur} (USD). Your bank converts it to {cur}.").replace("{eur}", eur(o.price + CONFIG.SHIPPING_COST)).replace("{cur}", CUR);
   return o;
 }
 $("#qtyOpts").addEventListener("change", updateSummary);
 $("#curSel").innerHTML = Object.keys(CURRENCIES).map(c => `<option value="${c}" ${c === CUR ? "selected" : ""}>${c}</option>`).join("");
 function setCur(c){ if (!CURRENCIES[c]) return; CUR = c; $("#curSel").value = c; try { localStorage.setItem("cur", c); } catch(_) {} renderPrices(); }
 $("#curSel").addEventListener("change", e => setCur(e.target.value));
-$("#country").addEventListener("change", e => { const c = CUR_BY_COUNTRY[e.target.value]; if (c) setCur(c); else if (CUR !== "EUR" && !Object.values(CUR_BY_COUNTRY).includes(CUR)) setCur("EUR"); });
+$("#country").addEventListener("change", e => { const c = CUR_BY_COUNTRY[e.target.value]; if (c) setCur(c); else if (CUR !== "USD" && !Object.values(CUR_BY_COUNTRY).includes(CUR)) setCur("USD"); });
 renderPrices();
 // live exchange rates (fallback to the built-in ones above)
-fetch("https://open.er-api.com/v6/latest/EUR").then(r => r.json()).then(d => { if (d && d.rates) { Object.keys(CURRENCIES).forEach(c => { if (d.rates[c]) CURRENCIES[c] = d.rates[c]; }); renderPrices(); } }).catch(() => {});
+fetch("https://open.er-api.com/v6/latest/USD").then(r => r.json()).then(d => { if (d && d.rates) { Object.keys(CURRENCIES).forEach(c => { if (d.rates[c]) CURRENCIES[c] = d.rates[c]; }); renderPrices(); } }).catch(() => {});
 
 // tracking
-ttq_("ViewContent", { content_name: "Dual-Screen Handheld Console", value: base.price, currency: "EUR" });
+ttq_("ViewContent", { content_name: "Dual-Screen Handheld Console", value: base.price, currency: "USD" });
 
 // all Buy Now buttons → scroll to form
 $$(".buy").forEach(b => b.addEventListener("click", () => {
@@ -542,7 +542,7 @@ heroObs.observe($(".hero")); formObs.observe($("#order"));
 
 // form submit
 let started = false;
-$("#orderForm").addEventListener("focusin", () => { if (!started) { started = true; ttq_("InitiateCheckout", { value: base.price, currency: "EUR" }); } });
+$("#orderForm").addEventListener("focusin", () => { if (!started) { started = true; ttq_("InitiateCheckout", { value: base.price, currency: "USD" }); } });
 
 $("#orderForm").addEventListener("submit", async e => {
   e.preventDefault();
@@ -580,19 +580,19 @@ $("#orderForm").addEventListener("submit", async e => {
   const btn = $("#submitBtn");
   btn.disabled = true; btn.textContent = t("redirecting", "Redirecting to secure payment…");
   ttq_("SubmitForm");
-  ttq_("AddPaymentInfo", { value: payload.total, currency: "EUR" });
+  ttq_("AddPaymentInfo", { value: payload.total, currency: "USD" });
   try { localStorage.setItem("last_order", JSON.stringify(payload)); } catch(_) {}
 
   if (CONFIG.WEBHOOK_URL) {
     try {
       const fd = new FormData();
-      fd.append("_subject", "New order " + payload.order_id + " – " + payload.product + " – €" + payload.total.toFixed(2));
+      fd.append("_subject", "New order " + payload.order_id + " – " + payload.product + " – $" + payload.total.toFixed(2));
       fd.append("_template", "table");
       fd.append("_captcha", "false");
       // automatic email to the customer: order confirmation + payment link if not completed
       fd.append("_autoresponse",
         "Hi " + payload.first_name + ",\n\n" +
-        "thank you for your order request " + payload.order_id + " (" + opt.label + " – €" + payload.total.toFixed(2) + ").\n\n" +
+        "thank you for your order request " + payload.order_id + " (" + opt.label + " – $" + payload.total.toFixed(2) + ").\n\n" +
         "If your payment didn't go through, your offer is still reserved. You can complete your order here:\n" + opt.lumino + "\n\n" +
         "If you have already paid, no action is needed: you'll receive your tracking number by email as soon as your order ships.\n\n" +
         "Any questions? Just reply to this email.\n\nCustomer Service");

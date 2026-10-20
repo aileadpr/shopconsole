@@ -185,6 +185,12 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
     .sticky .btn{max-width:320px}
   }
   @media(max-width:420px){.cmp{font-size:13px}.cmp th,.cmp td{padding:10px 6px}.cmp th{font-size:15px}}
+  #curSel,label[for=curSel]{display:none}
+  .paybox{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:16px 0 4px;background:var(--bg2);font-size:14px;color:var(--text)}
+  .paybox b{display:block;margin-bottom:4px}
+  .paybadges{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+  .pb{border:1px solid var(--line);background:#fff;border-radius:6px;padding:4px 9px;font-weight:800;font-size:12px;letter-spacing:.3px;color:#1a1f36}
+  .pb.visa{color:#1a1f71;font-style:italic}.pb.mc{color:#eb001b}.pb.ap{color:#000}
 </style>
 </head>
 <body>
@@ -377,6 +383,7 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
 <div class="form-err" data-i18n="t100" id="formErr">Please fill in all required fields.</div>
 <button class="btn" data-i18n="t101" id="submitBtn" type="submit">Continue to secure payment &rarr;</button>
 <div class="secure"><span data-i18n="t102">🔒 SSL encrypted</span><span data-i18n="t103">💳 Card payment</span><span data-i18n="t104">✅ 30-day guarantee</span></div>
+<div class="paybadges"><span class="pb visa">VISA</span><span class="pb mc">Mastercard</span><span class="pb ap">Apple Pay</span><span class="pb">USD $</span></div>
 </form>
 </div>
 </section>
@@ -458,7 +465,7 @@ const CURRENCIES = { USD:1, EUR:0.86, GBP:0.75, CAD:1.4, AUD:1.53, NZD:1.71, CHF
 const CUR_BY_COUNTRY = { "United States":"USD","Puerto Rico":"USD","Canada":"CAD","United Kingdom":"GBP","Australia":"AUD","New Zealand":"NZD","Switzerland":"CHF","Liechtenstein":"CHF","Mexico":"MXN","Brazil":"BRL","Argentina":"ARS","Chile":"CLP","Colombia":"COP","Peru":"PEN","Ecuador":"USD","Panama":"USD","El Salvador":"USD","United Arab Emirates":"AED","Saudi Arabia":"SAR","Qatar":"QAR","Kuwait":"KWD","Israel":"ILS","Turkey":"TRY","Japan":"JPY","South Korea":"KRW","China":"CNY","Hong Kong":"HKD","Malaysia":"MYR","Philippines":"PHP","Vietnam":"VND" };
 const REGION_CUR = { US:"USD",CA:"CAD",GB:"GBP",AU:"AUD",NZ:"NZD",CH:"CHF",MX:"MXN",BR:"BRL",AR:"ARS",CL:"CLP",CO:"COP",PE:"PEN",AE:"AED",SA:"SAR",QA:"QAR",KW:"KWD",IL:"ILS",TR:"TRY",JP:"JPY",KR:"KRW",CN:"CNY",HK:"HKD",SG:"SGD",MY:"MYR",PH:"PHP",VN:"VND",IN:"INR" };
 let CUR = "USD";
-try { const saved = localStorage.getItem("cur"); if (saved && CURRENCIES[saved]) CUR = saved; else { const reg = (new Intl.Locale(navigator.language || "en")).maximize().region; if (REGION_CUR[reg]) CUR = REGION_CUR[reg]; } } catch(_) {}
+// display currency fixed to USD (Lumino charges in USD)
 const money = n => {
   if (CUR === "USD") return eur(n);
   const v = n * CURRENCIES[CUR];
@@ -519,7 +526,6 @@ $("#qtyOpts").addEventListener("change", updateSummary);
 $("#curSel").innerHTML = Object.keys(CURRENCIES).map(c => `<option value="${c}" ${c === CUR ? "selected" : ""}>${c}</option>`).join("");
 function setCur(c){ if (!CURRENCIES[c]) return; CUR = c; $("#curSel").value = c; try { localStorage.setItem("cur", c); } catch(_) {} renderPrices(); }
 $("#curSel").addEventListener("change", e => setCur(e.target.value));
-$("#country").addEventListener("change", e => { const c = CUR_BY_COUNTRY[e.target.value]; if (c) setCur(c); else if (CUR !== "USD" && !Object.values(CUR_BY_COUNTRY).includes(CUR)) setCur("USD"); });
 renderPrices();
 // live exchange rates (fallback to the built-in ones above)
 fetch("https://open.er-api.com/v6/latest/USD").then(r => r.json()).then(d => { if (d && d.rates) { Object.keys(CURRENCIES).forEach(c => { if (d.rates[c]) CURRENCIES[c] = d.rates[c]; }); renderPrices(); } }).catch(() => {});

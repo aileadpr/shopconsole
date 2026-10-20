@@ -190,7 +190,7 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
   .paybox b{display:block;margin-bottom:4px}
   .paybadges{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:10px}
   .pb{border:1px solid var(--line);background:#fff;border-radius:6px;padding:4px 9px;font-weight:800;font-size:12px;letter-spacing:.3px;color:#1a1f36}
-  .pb.visa{color:#1a1f71;font-style:italic}.pb.mc{color:#eb001b}.pb.ap{color:#000}
+  .pb.visa{color:#1a1f71;font-style:italic}.pb.mc{color:#eb001b}.pb.ap{color:#000}.pb.amex{color:#fff;background:#2e77bc;border-color:#2e77bc}
 </style>
 </head>
 <body>
@@ -383,7 +383,7 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
 <div class="form-err" data-i18n="t100" id="formErr">Please fill in all required fields.</div>
 <button class="btn" data-i18n="t101" id="submitBtn" type="submit">Continue to secure payment &rarr;</button>
 <div class="secure"><span data-i18n="t102">🔒 SSL encrypted</span><span data-i18n="t103">💳 Card payment</span><span data-i18n="t104">✅ 30-day guarantee</span></div>
-<div class="paybadges"><span class="pb visa">VISA</span><span class="pb mc">Mastercard</span><span class="pb ap">Apple Pay</span><span class="pb">USD $</span></div>
+<div class="paybadges"><span class="pb visa">VISA</span><span class="pb mc">Mastercard</span><span class="pb amex">AMEX</span><span class="pb ap">Apple Pay</span><span class="pb">USD $</span></div>
 </form>
 </div>
 </section>

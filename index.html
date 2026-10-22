@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<script>
-(function(){var L=["bg","cs","da","de","el","en","es","et","fi","fr","ga","hr","hu","it","lt","lv","mt","nl","pl","pt","ro","sk","sl","sv"];var l=null;try{l=localStorage.getItem("lang")}catch(e){}
-if(!l||L.indexOf(l)<0){var n=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||"en"];l="en";for(var i=0;i<n.length;i++){var p=String(n[i]).toLowerCase().split("-")[0];if(L.indexOf(p)>=0){l=p;break;}}}
-window.LANG=l;window.LANGS=L;if(l!=="en")document.write('<script src="i18n/'+l+'.js"><\/script>');})();
-</script>
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Dual-Screen Handheld Console</title>
-<meta content="Dual-screen handheld game console: 7-inch Full HD 120Hz main screen, second touch screen, Hall-effect joysticks, Android, fan cooling. Tracked shipping, 30-day money-back guarantee, 2-year warranty." name="description">
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giant Plush Cat Bed</title>
+<meta name="description" content="Giant fluffy plush cat with a snuggle-in belly pocket and furry blanket. A cozy bed and lounger in Grey Tabby, Ginger or Cream. Buy 1, get 1 free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <!-- Meta Pixel -->
 <script>
-window.FB_PIXEL_ID = "1440943994610251";   // <- ID pixel Facebook da inserire
+window.FB_PIXEL_ID = "1440943994610251";
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageView'); }
+fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageView');
 </script>
+
 <style>
   :root{
-    --bg:#ffffff; --bg2:#f6f3fc; --card:#ffffff; --line:#e4dcf3;
-    --text:#1a1625; --muted:#6b6480; --accent:#6a3fd6; --accent2:#9a6bff;
+    --bg:#fffdfb; --bg2:#fdf3ee; --card:#ffffff; --line:#e6e4e0;
+    --text:#1c1f24; --muted:#636a75; --accent:#e0577a; --accent2:#f59ab0;
     --ok:#22c55e; --radius:16px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -31,7 +27,7 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
   body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:84px}
   img{max-width:100%;display:block}
   .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
-  h1,h2,h3{font-family:"Barlow Condensed",Inter,sans-serif;text-transform:uppercase;letter-spacing:.5px;line-height:1.05}
+  h1,h2,h3{font-family:Fredoka,system-ui,sans-serif;letter-spacing:0;line-height:1.1}
   h2{font-size:clamp(30px,6vw,46px);margin-bottom:14px}
   h3{font-size:22px;margin-bottom:6px}
   section{padding:56px 0}
@@ -43,43 +39,43 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
 
   /* buttons */
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:460px;padding:18px 24px;border:0;border-radius:14px;cursor:pointer;
-       background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;font-family:"Barlow Condensed",sans-serif;font-size:24px;font-weight:800;letter-spacing:1px;text-transform:uppercase;text-decoration:none;
-       box-shadow:0 10px 30px rgba(106,63,214,.30);transition:transform .15s ease, box-shadow .15s ease;animation:pulse 2.4s infinite}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(106,63,214,.45)}
+       background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;font-family:Inter,sans-serif;font-size:19px;font-weight:700;letter-spacing:.3px;text-decoration:none;
+       box-shadow:0 10px 30px rgba(224,87,122,.30);transition:transform .15s ease, box-shadow .15s ease;animation:pulse 2.4s infinite}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(224,87,122,.45)}
   .btn:active{transform:translateY(0)}
-  @keyframes pulse{0%,100%{box-shadow:0 10px 30px rgba(106,63,214,.30)}50%{box-shadow:0 10px 42px rgba(106,63,214,.50)}}
+  @keyframes pulse{0%,100%{box-shadow:0 10px 30px rgba(224,87,122,.30)}50%{box-shadow:0 10px 42px rgba(224,87,122,.50)}}
   .btn-sub{font-size:13px;color:var(--muted);margin-top:10px;text-align:center}
   .center{text-align:center}
   .cta-block{display:flex;flex-direction:column;align-items:center;margin-top:28px}
 
   /* image slots */
-  .img-slot{position:relative;border-radius:var(--radius);overflow:hidden;background:radial-gradient(circle at 30% 20%,#faf8ff,#ebe3fb 70%);border:1px solid var(--line);aspect-ratio:1/1}
-  .img-slot img{width:100%;height:100%;object-fit:contain;background:#fff;padding:12px}
+  .img-slot{position:relative;border-radius:var(--radius);overflow:hidden;background:radial-gradient(circle at 30% 20%,#fafafa,#ececea 70%);border:1px solid var(--line);aspect-ratio:3/4}
+  .img-slot img{width:100%;height:100%;object-fit:cover}
   .img-slot.has-img{background:#fff}
   .hero .img-slot{aspect-ratio:1/1}
   .swatches{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
   .sw{flex:1 1 0;min-width:70px;border:2px solid var(--line);border-radius:12px;background:#fff;padding:6px;cursor:pointer;text-align:center;font:inherit;font-size:12px;font-weight:600;color:var(--text);transition:border-color .15s}
   .sw img{width:100%;aspect-ratio:3/2;object-fit:contain;display:block;margin-bottom:4px}
-  .sw.on{border-color:var(--accent);background:rgba(154,107,255,.08)}
+  .sw.on{border-color:var(--accent);background:rgba(245,154,176,.08)}
   .color-opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
   @media(min-width:760px){.color-opts{grid-template-columns:repeat(4,1fr)}}
-  .img-slot .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#a79fbd;font-size:14px}
+  .img-slot .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#9aa6b4;font-size:14px}
 
   /* hero */
   .hero{padding:28px 0 48px}
   .hero-grid{display:grid;gap:28px}
   .rating{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;font-weight:600;margin-bottom:14px}
-  .hero h1{font-size:clamp(40px,9vw,64px);margin-bottom:14px}
-  .hero p.lead{font-size:17px;color:#3a3350;margin-bottom:18px}
+  .hero h1{font-size:clamp(32px,7vw,52px);margin-bottom:14px}
+  .hero p.lead{font-size:17px;color:#2f3946;margin-bottom:18px}
   .price-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:18px}
-  .price{font-family:"Barlow Condensed",sans-serif;font-size:44px;font-weight:800}
+  .price{font-family:Fredoka,sans-serif;font-size:44px;font-weight:800}
   .compare{font-size:20px;color:var(--muted);text-decoration:line-through}
   .save{background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:4px 10px;border-radius:99px}
   .checks{list-style:none;display:grid;gap:9px;margin-bottom:22px}
   .checks li{display:flex;gap:10px;align-items:flex-start;font-weight:500}
   .checks li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:rgba(34,197,94,.15);color:var(--ok);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;margin-top:1px}
   .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px;max-width:460px}
-  .trust-row div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center;font-size:12px;font-weight:600;color:#3a3350}
+  .trust-row div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center;font-size:12px;font-weight:600;color:#2f3946}
   .trust-row span{display:block;font-size:20px;margin-bottom:2px}
 
   /* problem */
@@ -96,16 +92,16 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
 
   /* split */
   .split{display:grid;gap:26px;align-items:center}
-  .split p{color:#3a3350;font-size:17px;margin-bottom:12px}
+  .split p{color:#2f3946;font-size:17px;margin-bottom:12px}
 
   /* compare table */
   .cmp{width:100%;border-collapse:separate;border-spacing:0;margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:15px}
   .cmp th,.cmp td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:center}
   .cmp tr:last-child td{border-bottom:0}
   .cmp td:first-child,.cmp th:first-child{text-align:left}
-  .cmp th{font-family:"Barlow Condensed",sans-serif;font-size:18px;text-transform:uppercase}
-  .cmp .us{background:rgba(154,107,255,.14)}
-  .y{color:var(--ok);font-weight:800;font-size:18px}.n{color:#a79fbd;font-weight:800;font-size:18px}
+  .cmp th{font-family:Fredoka,sans-serif;font-size:17px}
+  .cmp .us{background:rgba(245,154,176,.14)}
+  .y{color:var(--ok);font-weight:800;font-size:18px}.n{color:#9aa6b4;font-weight:800;font-size:18px}
 
   /* specs */
   .specs{display:grid;gap:0;margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
@@ -135,22 +131,22 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
   .order-card h3{margin:22px 0 12px;font-size:20px}
   .order-card h3:first-child{margin-top:0}
   .row{display:grid;gap:12px;margin-bottom:12px}
-  label{display:block;font-size:13px;font-weight:600;color:#3a3350;margin-bottom:6px}
+  label{display:block;font-size:13px;font-weight:600;color:#2f3946;margin-bottom:6px}
   input,select,textarea{width:100%;background:#ffffff;border:1px solid var(--line);border-radius:12px;color:var(--text);font:inherit;font-size:16px;padding:14px;outline:none;transition:border-color .15s}
   input:focus,select:focus,textarea:focus{border-color:var(--accent)}
   input.err,select.err{border-color:#ef4444}
   .qty-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .qty-opts label{margin:0;cursor:pointer;border:2px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:2px;transition:border-color .15s}
   .qty-opts input{display:none}
-  .qty-opts label:has(input:checked){border-color:var(--accent);background:rgba(154,107,255,.12)}
+  .qty-opts label:has(input:checked){border-color:var(--accent);background:rgba(245,154,176,.12)}
   .qty-opts b{font-size:16px}
   .qty-opts small{color:var(--muted)}
   .summary{border-top:1px dashed var(--line);margin-top:18px;padding-top:16px;display:grid;gap:8px;font-size:15px}
   .summary div{display:flex;justify-content:space-between}
-  .summary .tot{font-family:"Barlow Condensed",sans-serif;font-size:28px;font-weight:800}
+  .summary .tot{font-family:Fredoka,sans-serif;font-size:28px;font-weight:800}
   .consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);margin:16px 0}
   .consent input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:var(--accent)}
-  .consent a{color:#3a3350}
+  .consent a{color:#2f3946}
   .form-err{display:none;background:#fef2f2;border:1px solid #ef4444;color:#b91c1c;border-radius:12px;padding:12px;font-size:14px;margin-bottom:12px}
   .secure{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:12px;color:var(--muted)}
   .order .btn{max-width:none}
@@ -159,15 +155,10 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
   .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px 16px;display:flex;align-items:center;gap:14px;transform:translateY(110%);transition:transform .25s ease}
   .sticky.show{transform:translateY(0)}
   .sticky .sp{flex:none}
-  .sticky .sp b{font-family:"Barlow Condensed",sans-serif;font-size:26px;display:block;line-height:1}
+  .sticky .sp b{font-family:Fredoka,sans-serif;font-size:26px;display:block;line-height:1}
   .sticky .sp s{color:var(--muted);font-size:13px}
-  .sticky .btn{padding:14px 18px;font-size:20px;animation:none}
+  .sticky .btn{padding:14px 18px;font-size:17px;animation:none}
 
-  .cur-bar{display:flex;justify-content:flex-end;align-items:center;gap:8px;max-width:1080px;margin:0 auto;padding:8px 16px 0;font-size:13px;color:var(--muted)}
-  .cur-bar select{width:auto;padding:6px 10px;font-size:14px;border-radius:10px}
-  .cur-note{font-size:12.5px;color:var(--muted);margin:-10px 0 16px}
-  .charge-note{font-size:12.5px;color:var(--muted);text-align:right}
-  .charge-note:empty,.cur-note:empty{display:none}
   footer{border-top:1px solid var(--line);padding:30px 0 40px;text-align:center;font-size:13px;color:var(--muted)}
   footer a{color:var(--muted);margin:0 8px}
 
@@ -184,225 +175,253 @@ if (window.FB_PIXEL_ID) { fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageVie
     .sticky{justify-content:center}
     .sticky .btn{max-width:320px}
   }
-  @media(max-width:420px){.cmp{font-size:13px}.cmp th,.cmp td{padding:10px 6px}.cmp th{font-size:15px}}
-  #curSel,label[for=curSel]{display:none}
   .paybox{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:16px 0 4px;background:var(--bg2);font-size:14px;color:var(--text)}
   .paybox b{display:block;margin-bottom:4px}
   .paybadges{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:10px}
   .pb{border:1px solid var(--line);background:#fff;border-radius:6px;padding:4px 9px;font-weight:800;font-size:12px;letter-spacing:.3px;color:#1a1f36}
   .pb.visa{color:#1a1f71;font-style:italic}.pb.mc{color:#eb001b}.pb.ap{color:#000}.pb.amex{color:#fff;background:#2e77bc;border-color:#2e77bc}
 </style>
-</head>
-<body>
-<div class="announce" data-i18n="t0">🔥 Buy 1, get 1 FREE &nbsp;&middot;&nbsp; 🚚 Tracked shipping &nbsp;&middot;&nbsp; ✅ 30-day money-back guarantee &nbsp;&middot;&nbsp; 🛡️ 2-year warranty</div>
-<div class="cur-bar"><label data-i18n="t1" for="curSel" style="margin:0">Currency</label><select aria-label="Currency" id="curSel"></select><label for="langSel" style="margin:0 0 0 6px">🌐</label><select aria-label="Language" id="langSel"></select></div>
+</head><body>
+
+<div class="announce">🐱 Buy 1, get 1 FREE &nbsp;·&nbsp; 🚚 Free tracked shipping &nbsp;·&nbsp; ✅ 30-day returns</div>
+
 <!-- ============ HERO ============ -->
 <header class="hero">
-<div class="wrap hero-grid">
-<div><div class="img-slot" data-img="hero"></div><div class="swatches" id="heroSwatches"></div></div>
-<div>
-<div class="rating" data-i18n="t2">🎮 Two screens &middot; One pocket console</div>
-<h1 data-i18n="t3">Two screens.<br><span class="accent">Endless games.</span></h1>
-<p class="lead" data-i18n="t4">The dual-screen handheld console that folds into your pocket. A big main display for your games, a second touch screen for maps, menus and controls, and a classic clamshell design that protects both when you close it.</p>
-<div class="price-row">
-<span class="price" data-price></span>
-<span class="compare" data-compare></span>
-<span class="save" data-save></span>
-</div>
-<p class="cur-note" data-curnote></p>
-<ul class="checks">
-<li data-i18n="t5">7-inch Full HD main screen with smooth 120Hz gameplay</li>
-<li data-i18n="t6">Second touch screen for maps, menus, stats and shortcuts</li>
-<li data-i18n="t7">Hall-effect joysticks with RGB light rings: no stick drift</li>
-<li data-i18n="t8">Android system: play thousands of games, stream and browse</li>
-</ul>
-<button class="btn buy" data-cta="hero" data-i18n="t9">Buy now &rarr;</button>
-<div class="trust-row">
-<div data-i18n="t10"><span>🚚</span>Tracked shipping</div>
-<div data-i18n="t11"><span>&larrhk;️</span>30-day returns</div>
-<div data-i18n="t12"><span>🔒</span>Secure checkout</div>
-</div>
-</div>
-</div>
+  <div class="wrap hero-grid">
+    <div class="img-slot" data-img="hero"></div>
+    <div>
+      <div class="rating">🐱 Giant plush cat · Snuggle-in bed · 3 colours</div>
+      <h1>Fall asleep in the arms<br><span class="accent">of a giant cat.</span></h1>
+      <p class="lead">A huge, fluffy plush cat with a soft pocket in its belly: climb in, pull the furry blanket up and let its big paws hug you. A cozy bed, a reading corner and the cuddliest room decoration in one.</p>
+      <div class="price-row">
+        <span class="price" data-price></span>
+        <span class="compare" data-compare></span>
+        <span class="save" data-save></span>
+      </div>
+      <ul class="checks">
+        <li>Giant, ultra-fluffy plush body to sink into</li>
+        <li>Soft belly pocket with a furry blanket on top</li>
+        <li>Big cuddly paws and a long fluffy tail</li>
+        <li>3 colours: Grey Tabby, Ginger and Cream</li>
+      </ul>
+      <button class="btn buy" data-cta="hero">Buy now →</button>
+      <div class="trust-row">
+        <div><span>🚚</span>Free shipping</div>
+        <div><span>↩️</span>30-day returns</div>
+        <div><span>🔒</span>Secure checkout</div>
+      </div>
+    </div>
+  </div>
 </header>
+
 <!-- ============ PROBLEM ============ -->
 <section class="problem">
-<div class="wrap center">
-<h2 data-i18n="t13">Gaming on your phone isn't gaming</h2>
-<p class="muted" data-i18n="t14">Touch controls, notifications and a dying battery ruin every session.</p>
-<div class="pain-grid" style="text-align:left">
-<div class="pain" data-i18n="t15"><b>👆</b>Your thumbs cover half the screen with touch controls</div>
-<div class="pain" data-i18n="t16"><b>🔔</b>Calls and notifications interrupting every match</div>
-<div class="pain" data-i18n="t17"><b>🪫</b>Your phone battery dead before the end of the day</div>
-<div class="pain" data-i18n="t18"><b>🧳</b>Big handhelds too heavy and bulky to carry around</div>
-</div>
-<div class="cta-block">
-<button class="btn buy" data-cta="problem" data-i18n="t19">I want a real console &rarr;</button>
-</div>
-</div>
+  <div class="wrap center">
+    <h2>Bedtime shouldn't be a battle</h2>
+    <p class="muted">Sound familiar?</p>
+    <div class="pain-grid" style="text-align:left">
+      <div class="pain"><b>😫</b>Kids who never want to go to bed</div>
+      <div class="pain"><b>📱</b>No cozy spot to read or rest without a screen</div>
+      <div class="pain"><b>🧸</b>A pile of small plushies that end up on the floor</div>
+      <div class="pain"><b>🎁</b>Looking for a gift that's truly unforgettable</div>
+    </div>
+    <div class="cta-block">
+      <button class="btn buy" data-cta="problem">Get the giant cat →</button>
+    </div>
+  </div>
 </section>
+
 <!-- ============ FEATURES ============ -->
 <section>
-<div class="wrap center">
-<h2 data-i18n="t20">Built for play. <span class="accent">Made to carry.</span></h2>
-<p class="muted" data-i18n="t21">The feel of a real console in a fold-up design that fits in your pocket.</p>
-<div class="feat-grid" style="text-align:left">
-<div class="feat"><div class="ico">🖥️</div><h3 data-i18n="t22">Dual screens</h3><p data-i18n="t23">A 7-inch Full HD main display for the game and a second touch screen below for maps, inventory, menus or performance stats.</p></div>
-<div class="feat"><div class="ico">⚡</div><h3 data-i18n="t24">120Hz smooth play</h3><p data-i18n="t25">High refresh rate for fluid motion in fast games, with a one-tap performance mode right on the second screen.</p></div>
-<div class="feat"><div class="ico">🕹️</div><h3 data-i18n="t26">Hall-effect sticks</h3><p data-i18n="t27">Magnetic joysticks that don't wear out or drift, surrounded by customizable RGB light rings.</p></div>
-<div class="feat"><div class="ico">❄️</div><h3 data-i18n="t28">Active cooling</h3><p data-i18n="t29">A built-in fan keeps temperatures low during long sessions, so performance stays steady.</p></div>
-<div class="feat"><div class="ico">📂</div><h3 data-i18n="t30">Clamshell design</h3><p data-i18n="t31">Fold it closed and both screens are protected. Open it and you're playing in a second.</p></div>
-<div class="feat"><div class="ico">🔋</div><h3 data-i18n="t32">All-day battery</h3><p data-i18n="t33">A large rechargeable battery for hours of play, with USB-C fast charging.</p></div>
-</div>
-</div>
+  <div class="wrap center">
+    <h2>One giant hug. <span class="accent">Every night.</span></h2>
+    <p class="muted">The softest place in the house.</p>
+    <div class="feat-grid" style="text-align:left">
+      <div class="feat"><div class="ico">☁️</div><h3>Ultra-fluffy plush</h3><p>Long, soft faux fur that feels like snuggling a real giant cat.</p></div>
+      <div class="feat"><div class="ico">🛏️</div><h3>Snuggle-in pocket</h3><p>Climb into the belly pocket and pull the furry blanket up to your chin.</p></div>
+      <div class="feat"><div class="ico">🐾</div><h3>Cuddly paws</h3><p>Big paws with pink toe beans rest on top, like the cat is hugging you.</p></div>
+      <div class="feat"><div class="ico">😴</div><h3>Sleepy face</h3><p>A calm, smiling cat face that makes bedtime feel safe and cozy.</p></div>
+      <div class="feat"><div class="ico">📚</div><h3>Not just for sleeping</h3><p>Perfect for reading, naps, films and lazy afternoons.</p></div>
+      <div class="feat"><div class="ico">🎨</div><h3>3 colours</h3><p>Grey Tabby, Ginger or Cream: pick the cat that fits your room.</p></div>
+    </div>
+  </div>
 </section>
-<!-- ============ SPLIT: WHITE ============ -->
+
+<!-- ============ SPLIT: GINGER ============ -->
 <section style="background:var(--bg2)">
-<div class="wrap split">
-<div class="img-slot" data-img="sound"></div>
-<div>
-<h2 data-i18n="t34">Your second screen<br><span class="accent">changes everything.</span></h2>
-<p data-i18n="t35">Keep the game full-screen on top and put everything else below: the map, your inventory, a walkthrough, a chat or live FPS, temperature and fan stats.</p>
-<p data-i18n="t36">Tap to switch performance modes, remap controls or record macros without ever pausing the game.</p>
-<button class="btn buy" data-cta="sound" data-i18n="t37" style="margin-top:10px">Get yours now &rarr;</button>
-</div>
-</div>
+  <div class="wrap split">
+    <div class="img-slot" data-img="ginger"></div>
+    <div>
+      <h2>Ginger.<br><span class="accent">Sweet dreams guaranteed.</span></h2>
+      <p>Fluffy ginger and white fur with big blue eyes. Kids climb in for a story and fall asleep before the end of the page.</p>
+      <button class="btn buy" data-cta="ginger" style="margin-top:10px">Get yours now →</button>
+    </div>
+  </div>
 </section>
-<!-- ============ SPLIT: BLACK ============ -->
+
+<!-- ============ SPLIT: CREAM ============ -->
 <section>
-<div class="wrap split rev">
-<div class="img-slot" data-img="desk"></div>
-<div>
-<h2 data-i18n="t38">Pocket size.<br><span class="accent">Console feel.</span></h2>
-<p data-i18n="t39">Full-size ABXY buttons, a precise D-pad, shoulder buttons and triggers, plus vibration feedback and stereo speakers. Everything you expect from a home console, folded into a device you can take anywhere.</p>
-<p data-i18n="t40">Choose your style: Transparent Purple, Arctic White or Shadow Black.</p>
-</div>
-</div>
+  <div class="wrap split rev">
+    <div class="img-slot" data-img="cream"></div>
+    <div>
+      <h2>Cream.<br><span class="accent">Big enough for grown-ups too.</span></h2>
+      <p>Cream fur with soft brown paws, ears and tail. Lie back on its belly and relax after a long day: adults love it as much as kids do.</p>
+    </div>
+  </div>
 </section>
-<!-- ============ COMPARISON ============ -->
+
+<!-- ============ SPLIT: GREY ============ -->
 <section style="background:var(--bg2)">
-<div class="wrap">
-<h2 class="center" data-i18n="t41">Why not just use your phone?</h2>
-<table class="cmp">
-<tr><th></th><th class="us" data-i18n="t42">This console</th><th data-i18n="t43">Smartphone</th></tr>
-<tr><td data-i18n="t44">Physical buttons and joysticks</td><td class="us y">&checkmark;</td><td class="n">✕</td></tr>
-<tr><td data-i18n="t45">Second screen for maps and menus</td><td class="us y">&checkmark;</td><td class="n">✕</td></tr>
-<tr><td data-i18n="t46">Drift-free Hall-effect sticks</td><td class="us y">&checkmark;</td><td class="n">✕</td></tr>
-<tr><td data-i18n="t47">Active fan cooling</td><td class="us y">&checkmark;</td><td class="n">✕</td></tr>
-<tr><td data-i18n="t48">No calls or notifications mid-game</td><td class="us y">&checkmark;</td><td class="n">✕</td></tr>
-<tr><td data-i18n="t49">Phone battery saved for the day</td><td class="us y">&checkmark;</td><td class="n">✕</td></tr>
-</table>
-<div class="cta-block">
-<button class="btn buy" data-cta="compare" data-i18n="t9">Buy now &rarr;</button>
-</div>
-</div>
+  <div class="wrap split">
+    <div class="img-slot" data-img="grey"></div>
+    <div>
+      <h2>A gift<br><span class="accent">they'll never outgrow.</span></h2>
+      <p>Birthdays, Christmas, a new bedroom. With the 1+1 offer you get two giant cats: one for each child, or one for you and one for a friend.</p>
+      <button class="btn buy" data-cta="gift" style="margin-top:10px">Buy now →</button>
+    </div>
+  </div>
 </section>
+
+<!-- ============ COMPARE ============ -->
+<section>
+  <div class="wrap">
+    <h2 class="center">Why it beats the rest</h2>
+    <table class="cmp">
+      <tr><th></th><th class="us">Giant cat bed</th><th>Regular plush / sleeping bag</th></tr>
+      <tr><td>Giant, huggable size</td><td class="us y">✓</td><td class="n">✕</td></tr>
+      <tr><td>Snuggle-in belly pocket</td><td class="us y">✓</td><td class="n">✕</td></tr>
+      <tr><td>Ultra-fluffy faux fur</td><td class="us y">✓</td><td class="n">✕</td></tr>
+      <tr><td>Doubles as room decoration</td><td class="us y">✓</td><td class="n">✕</td></tr>
+      <tr><td>Wow-effect gift</td><td class="us y">✓</td><td class="n">✕</td></tr>
+    </table>
+    <div class="cta-block">
+      <button class="btn buy" data-cta="compare">Buy now →</button>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SPECS ============ -->
-<section>
-<div class="wrap">
-<h2 class="center" data-i18n="t50">Specifications</h2>
-<div class="specs" id="specs"></div>
-</div>
-</section>
-<!-- ============ GUARANTEES ============ -->
 <section style="background:var(--bg2)">
-<div class="wrap">
-<h2 class="center" data-i18n="t51">Order with <span class="accent">zero risk</span></h2>
-<div class="guar-grid">
-<div class="guar"><div class="ico">✅</div><div><h3 data-i18n="t52">30-day money-back</h3><p data-i18n="t53">Not happy with it? Return it within 30 days of delivery for a full refund.</p></div></div>
-<div class="guar"><div class="ico">🛡️</div><div><h3 data-i18n="t54">2-year warranty</h3><p data-i18n="t55">Covered by the 2-year legal guarantee of conformity under EU consumer law.</p></div></div>
-<div class="guar"><div class="ico">🔄</div><div><h3 data-i18n="t56">Fast replacement</h3><p data-i18n="t57">Arrived damaged or faulty? We send you a replacement at no extra cost.</p></div></div>
-<div class="guar"><div class="ico">🚚</div><div><h3 data-i18n="t58">Tracked shipping</h3><p data-i18n="t59">Tracking number by email as soon as it ships. Delivery in <span data-delivery></span> business days.</p></div></div>
-<div class="guar"><div class="ico">🔒</div><div><h3 data-i18n="t60">Secure payment</h3><p data-i18n="t61">Encrypted checkout. We never store your card details.</p></div></div>
-<div class="guar"><div class="ico">💬</div><div><h3 data-i18n="t62">Real support</h3><p data-i18n="t63">Our team answers by email within 24 business hours.</p></div></div>
-</div>
-<div class="cta-block">
-<button class="btn buy" data-cta="guarantee" data-i18n="t64">Buy now, risk-free &rarr;</button>
-</div>
-</div>
+  <div class="wrap">
+    <h2 class="center">Specifications</h2>
+    <div class="specs" id="specs"></div>
+  </div>
 </section>
-<!-- ============ FAQ ============ -->
+
+<!-- ============ GUARANTEES ============ -->
 <section>
-<div class="wrap" style="max-width:760px">
-<h2 class="center" data-i18n="t65">FAQ</h2>
-<div class="faq">
-<details><summary data-i18n="t66">What games can I play?</summary><p data-i18n="t67">It runs Android, so you can install games from the Play Store, use cloud gaming and streaming apps, and play your own compatible game library. The physical controls work with any game that supports a controller.</p></details>
-<details><summary data-i18n="t68">What is the second screen for?</summary><p data-i18n="t69">It's a touch screen you can use for maps, inventory, menus, a walkthrough or a chat while the game stays full-screen on top. It also shows FPS, temperature and fan speed, and gives one-tap access to performance modes and control settings.</p></details>
-<details><summary data-i18n="t70">Will the joysticks drift?</summary><p data-i18n="t71">No. The Hall-effect joysticks use magnets instead of physical contacts, so they don't wear out and don't develop the drift common on traditional sticks.</p></details>
-<details><summary data-i18n="t72">Can I connect it to Wi-Fi and Bluetooth?</summary><p data-i18n="t73">Yes. It has Wi-Fi for downloads and streaming and Bluetooth for headphones and controllers.</p></details>
-<details><summary data-i18n="t74">How do I charge it?</summary><p data-i18n="t75">Through the USB-C port with fast charging. You can keep playing while it charges.</p></details>
-<details><summary data-i18n="t76">How long does delivery take?</summary><p data-i18n="t77">Your order ships with tracking and arrives in <span data-delivery></span> business days. You'll get the tracking number by email.</p></details>
-<details><summary data-i18n="t78">What if I don't like it?</summary><p data-i18n="t79">You have 30 days from delivery to return it for a full refund. Just email us and we'll guide you through it.</p></details>
-</div>
-</div>
+  <div class="wrap">
+    <h2 class="center">Order with <span class="accent">confidence</span></h2>
+    <div class="guar-grid">
+      <div class="guar"><div class="ico">✅</div><div><h3>30-day returns</h3><p>Return it within 30 days of delivery, unused and in its original packaging, for a full refund.</p></div></div>
+      <div class="guar"><div class="ico">🛡️</div><div><h3>2-year warranty</h3><p>Covered by the 2-year legal guarantee of conformity under EU consumer law.</p></div></div>
+      <div class="guar"><div class="ico">🎁</div><div><h3>The perfect gift</h3><p>With the 1+1 offer: one for your child and one for a sibling or friend.</p></div></div>
+      <div class="guar"><div class="ico">🚚</div><div><h3>Free tracked shipping</h3><p>Tracking number by email as soon as it ships. Delivery in <span data-delivery></span> business days.</p></div></div>
+      <div class="guar"><div class="ico">🔒</div><div><h3>Secure payment</h3><p>Encrypted checkout. We never store your card details.</p></div></div>
+      <div class="guar"><div class="ico">💬</div><div><h3>Customer support</h3><p>Questions about your order? Our team answers within 24 business hours.</p></div></div>
+    </div>
+    <div class="cta-block">
+      <button class="btn buy" data-cta="guarantee">Buy now →</button>
+    </div>
+  </div>
 </section>
+
+<!-- ============ FAQ ============ -->
+<section style="background:var(--bg2)">
+  <div class="wrap" style="max-width:760px">
+    <h2 class="center">FAQ</h2>
+    <div class="faq">
+      <details><summary>Which colours are available?</summary><p>Grey Tabby (grey striped fur), Ginger (ginger and white fur with blue eyes) and Cream (cream fur with brown paws, ears and tail).</p></details>
+      <details><summary>Is it for kids or adults?</summary><p>Kids love it as a cozy bed and hideout, and adults use it as a giant lounger for reading and relaxing.</p></details>
+      <details><summary>How does it work?</summary><p>Climb into the soft pocket in the cat's belly and pull the furry blanket over you. The paws rest on top, like a big hug.</p></details>
+      <details><summary>Can I choose 2 different colours?</summary><p>Yes. Pick the first colour in the order form and write the second one in the delivery notes.</p></details>
+      <details><summary>Is it safe for small children?</summary><p>Young children should always use it under adult supervision. It's not intended as a bed for babies.</p></details>
+      <details><summary>How long does delivery take?</summary><p>Your order ships with tracking and arrives in <span data-delivery></span> business days. You'll get the tracking number by email.</p></details>
+      <details><summary>What's your return policy?</summary><p>You have 30 days from delivery to return it unused and in its original packaging for a full refund. Defects are covered by the 2-year legal warranty.</p></details>
+    </div>
+  </div>
+</section>
+
 <!-- ============ ORDER FORM ============ -->
 <section class="order" id="order">
-<div class="wrap">
-<h2 class="center" data-i18n="t80">Complete your order</h2>
-<p class="center muted" data-i18n="t81">Fill in your shipping details, then continue to secure payment.</p>
-<form class="order-card" id="orderForm" novalidate>
-<h3 data-i18n="t82">1. Choose your option</h3>
-<label data-i18n="t83">Color</label>
-<div class="color-opts" id="colorOpts"></div>
-<input id="color" name="color" type="hidden">
-<div class="qty-opts" id="qtyOpts"></div>
-<h3 data-i18n="t84">2. Contact</h3>
-<div class="row two">
-<div><label data-i18n="t85" for="firstName">First name *</label><input autocomplete="given-name" id="firstName" name="firstName" required></div>
-<div><label data-i18n="t86" for="lastName">Last name *</label><input autocomplete="family-name" id="lastName" name="lastName" required></div>
-</div>
-<div class="row two">
-<div><label data-i18n="t87" for="email">Email *</label><input autocomplete="email" id="email" inputmode="email" name="email" required type="email"></div>
-<div><label data-i18n="t88" for="phone">Phone *</label><input autocomplete="tel" id="phone" inputmode="tel" name="phone" required type="tel"></div>
-</div>
-<h3 data-i18n="t89">3. Shipping address</h3>
-<div class="row">
-<div><label data-i18n="t90" for="address">Street address and number *</label><input autocomplete="address-line1" id="address" name="address" required></div>
-</div>
-<div class="row">
-<div><label data-i18n="t91" for="address2">Apartment, floor, buzzer (optional)</label><input autocomplete="address-line2" id="address2" name="address2"></div>
-</div>
-<div class="row three">
-<div><label data-i18n="t92" for="zip">Postal code *</label><input autocomplete="postal-code" id="zip" name="zip" required></div>
-<div><label data-i18n="t93" for="city">City *</label><input autocomplete="address-level2" id="city" name="city" required></div>
-<div><label data-i18n="t94" for="province">Province / State</label><input autocomplete="address-level1" id="province" name="province"></div>
-</div>
-<div class="row">
-<div><label data-i18n="t95" for="country">Country *</label><select autocomplete="country-name" id="country" name="country" required></select></div>
-</div>
-<div class="row">
-<div><label data-i18n="t96" for="notes">Notes (optional, e.g. a different color for each console)</label><textarea id="notes" name="notes" rows="2"></textarea></div>
-</div>
-<div class="summary">
-<div><span data-i18n="t97">Subtotal</span><span id="sumSub"></span></div>
-<div><span data-i18n="t98">Shipping</span><span id="sumShip"></span></div>
-<div class="tot"><span data-i18n="t99">Total</span><span id="sumTot"></span></div>
-<div class="charge-note" id="chargeNote"></div>
-</div>
-<div class="form-err" data-i18n="t100" id="formErr">Please fill in all required fields.</div>
-<button class="btn" data-i18n="t101" id="submitBtn" type="submit">Continue to secure payment &rarr;</button>
-<div class="secure"><span data-i18n="t102">🔒 SSL encrypted</span><span data-i18n="t103">💳 Card payment</span><span data-i18n="t104">✅ 30-day guarantee</span></div>
-<div class="paybadges"><span class="pb visa">VISA</span><span class="pb mc">Mastercard</span><span class="pb amex">AMEX</span><span class="pb ap">Apple Pay</span><span class="pb">USD $</span></div>
-</form>
-</div>
+  <div class="wrap">
+    <h2 class="center">Complete your order</h2>
+    <p class="center muted">Fill in your shipping details, then continue to secure payment.</p>
+
+    <form class="order-card" id="orderForm" novalidate>
+      <h3>1. Choose your offer</h3>
+      <div class="qty-opts" id="qtyOpts"></div>
+
+      <h3>2. Colour</h3>
+      <div class="row">
+        <div><label for="color">Colour *</label><select id="color" name="color" required>
+          <option value="">Choose your colour</option><option>Grey Tabby</option><option>Ginger</option><option>Cream</option>
+        </select></div>
+      </div>
+      <p class="muted" style="font-size:13px;margin:-4px 0 6px">Want 2 different colours? Pick the first here and write the second in the delivery notes.</p>
+
+      <h3>3. Contact</h3>
+      <div class="row two">
+        <div><label for="firstName">First name *</label><input id="firstName" name="firstName" autocomplete="given-name" required></div>
+        <div><label for="lastName">Last name *</label><input id="lastName" name="lastName" autocomplete="family-name" required></div>
+      </div>
+      <div class="row two">
+        <div><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
+        <div><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      </div>
+
+      <h3>4. Shipping address</h3>
+      <div class="row">
+        <div><label for="address">Street address and number *</label><input id="address" name="address" autocomplete="address-line1" required></div>
+      </div>
+      <div class="row">
+        <div><label for="address2">Apartment, floor, buzzer (optional)</label><input id="address2" name="address2" autocomplete="address-line2"></div>
+      </div>
+      <div class="row three">
+        <div><label for="zip">Postal code *</label><input id="zip" name="zip" autocomplete="postal-code" required></div>
+        <div><label for="city">City *</label><input id="city" name="city" autocomplete="address-level2" required></div>
+        <div><label for="province">Province / State</label><input id="province" name="province" autocomplete="address-level1"></div>
+      </div>
+      <div class="row">
+        <div><label for="country">Country *</label><select id="country" name="country" autocomplete="country-name" required></select></div>
+      </div>
+      <div class="row">
+        <div><label for="notes">Delivery notes (optional)</label><textarea id="notes" name="notes" rows="2"></textarea></div>
+      </div>
+
+      <div class="summary">
+        <div><span>Subtotal</span><span id="sumSub"></span></div>
+        <div><span>Shipping</span><span id="sumShip"></span></div>
+        <div class="tot"><span>Total</span><span id="sumTot"></span></div>
+      </div>
+
+      <div class="paybox"><b>🔒 Next step: secure payment</b>After you continue, you'll be taken to our secure payment page to pay by card (Visa, Mastercard, Amex) or Apple Pay. Prices are in US dollars ($): your bank converts the amount automatically. Covered by our 30-day money-back guarantee.<div class="paybadges"><span class="pb visa">VISA</span><span class="pb mc">Mastercard</span><span class="pb amex">AMEX</span><span class="pb ap">Apple Pay</span><span class="pb">USD $</span></div></div>
+
+      <div class="form-err" id="formErr">Please fill in all required fields.</div>
+      <button type="submit" class="btn" id="submitBtn">Continue to secure payment →</button>
+      <div class="secure"><span>🔒 SSL encrypted</span><span>💳 Card payment</span><span>✅ 30-day returns</span></div>
+    </form>
+  </div>
 </section>
+
 <footer>
-<div class="wrap">
-<p data-i18n="t105" style="margin-bottom:10px">
-<a data-link="shipping" href="#">Shipping</a>
-<a data-link="refund" href="#">Refund policy</a>
-<a data-link="privacy" href="#">Privacy</a>
-<a data-link="terms" href="#">Terms</a>
-<a data-link="contact" href="#">Contact</a>
-</p>
-<p data-i18n="t106">&copy; <span id="yr"></span> <span data-store></span>. All rights reserved.</p>
-</div>
+  <div class="wrap">
+    <p style="margin-bottom:10px">
+      <a href="#" data-link="shipping">Shipping</a>
+      <a href="#" data-link="refund">Refund policy</a>
+      <a href="#" data-link="privacy">Privacy</a>
+      <a href="#" data-link="terms">Terms</a>
+      <a href="#" data-link="contact">Contact</a>
+    </p>
+    <p>© <span id="yr"></span> <span data-store></span>. All rights reserved.</p>
+  </div>
 </footer>
+
 <div class="sticky" id="sticky">
-<div class="sp"><b data-price></b><s data-compare></s></div>
-<button class="btn buy" data-cta="sticky" data-i18n="t9">Buy now &rarr;</button>
+  <div class="sp"><b data-price></b><s data-compare></s></div>
+  <button class="btn buy" data-cta="sticky">Buy now →</button>
 </div>
+
 <script>
 /* ==================================================================
    CONFIGURAZIONE: modifica solo questa parte
@@ -411,41 +430,28 @@ const CONFIG = {
   STORE_NAME: "Your Store",
   CURRENCY: "$",
 
-  // Prezzo per quantità. Ogni opzione ha il SUO link di pagamento Lumino.
+  // Offerte. Ogni opzione ha il SUO link di pagamento Lumino.
   OPTIONS: [
     { qty: 2, label: "Buy 1, get 1 FREE",  price: 35.90, compare: 71.80,  lumino: "https://app.lumino.io/buy/2ba32c8a-cd15-4818-a9f8-c75eb3e6de62" },
     { qty: 4, label: "Buy 2, get 2 FREE",  price: 44.90, compare: 143.60, lumino: "https://app.lumino.io/buy/f022581c-23b0-4324-b407-20abae9772f4", badge: "Best value" }
   ],
-  SHIPPING_COST: 0,          // 0 = mostra "Free"
+  SHIPPING_COST: 0,
 
-  COLORS: [
-    { name: "Transparent Purple", img: "img/purple.jpg" },
-    { name: "Arctic White",       img: "img/white.jpg" },
-    { name: "Shadow Black",       img: "img/black.jpg" }
-  ],
-  COUNTRIES: ["Italy","Afghanistan","Albania","American Samoa","Andorra","Anguilla","Antigua and Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Barbados","Belgium","Belize","Bermuda","Bhutan","Bolivia","Bonaire","Bosnia and Herzegovina","Brazil","British Virgin Islands","Brunei","Bulgaria","Cambodia","Canada","Cayman Islands","Chile","China","Colombia","Cook Islands","Costa Rica","Croatia","Cuba","Curaçao","Cyprus","Czech Republic","Denmark","Dominica","Dominican Republic","Ecuador","El Salvador","Estonia","Falkland Islands","Fiji","Finland","France","French Guiana","French Polynesia","Georgia","Germany","Greece","Greenland","Grenada","Guadeloupe","Guam","Guatemala","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","Iraq","Ireland","Israel","Jamaica","Japan","Jordan","Kazakhstan","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Liechtenstein","Lithuania","Luxembourg","Macau","Malaysia","Maldives","Malta","Marshall Islands","Martinique","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Myanmar","Nauru","Netherlands","New Caledonia","New Zealand","Nicaragua","Niue","Norfolk Island","North Macedonia","Northern Mariana Islands","Norway","Oman","Palau","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Pitcairn Islands","Poland","Portugal","Puerto Rico","Qatar","Romania","Saint Barthélemy","Saint Kitts and Nevis","Saint Lucia","Saint Martin","Saint Pierre and Miquelon","Saint Vincent and the Grenadines","Samoa","San Marino","Saudi Arabia","Serbia","Sint Maarten","Slovakia","Slovenia","Solomon Islands","South Korea","Spain","Suriname","Sweden","Switzerland","Syria","Timor-Leste","Tokelau","Tonga","Trinidad and Tobago","Turkey","Turkmenistan","Turks and Caicos Islands","Tuvalu","U.S. Virgin Islands","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Wallis and Futuna"],
+  COUNTRIES: ["Lithuania","Hungary","Estonia","Croatia"],
 
-  // Dove arrivano i dati del form (LeadFather: URL dell'Inbound Webhook del workflow)
+  // Dove arrivano i dati del form (Zapier Catch Hook o Google Sheets /exec)
   WEBHOOK_URL: "https://formsubmit.co/ajax/702cbb6ef8df861316dc368824789996",
 
-  // Immagini (URL pubblici)
-  IMAGES: { hero: "img/purple.jpg", sound: "img/white.jpg", desk: "img/black.jpg" },
+  IMAGES: { hero: "img/hero.jpg", ginger: "img/ginger.jpg", cream: "img/cream.jpg", grey: "img/grey.jpg" },
 
   DELIVERY_DAYS: "5–10",
   SPECS: [
-    ["Main screen", "7-inch Full HD (1920 × 1080), up to 120Hz"],
-    ["Second screen", "Touch screen for maps, menus and stats"],
-    ["Design", "Clamshell, folds closed to protect both screens"],
-    ["System", "Android"],
-    ["Controls", "Hall-effect joysticks with RGB rings, D-pad, ABXY, shoulder buttons and triggers"],
-    ["Feedback", "Dual vibration motors"],
-    ["Audio", "Front stereo speakers"],
-    ["Cooling", "Active fan with heat sink"],
-    ["Connectivity", "Wi-Fi, Bluetooth"],
-    ["Ports", "USB-C (charging and data), microSD card slot"],
-    ["Charging", "USB-C fast charging"],
-    ["Colors", "Transparent Purple, Arctic White, Shadow Black"],
-    ["In the box", "Console, USB-C cable, user manual"]
+    ["Type", "Giant plush cat bed / lounger"],
+    ["Fabric", "Ultra-soft faux fur"],
+    ["Inside", "Snuggle-in belly pocket with furry blanket"],
+    ["Colours", "Grey Tabby, Ginger, Cream"],
+    ["Ideal for", "Kids' rooms, reading corners, living rooms"],
+    ["In the 1+1 offer", "2 giant cats"]
   ],
 
   LINKS: { privacy:"#", terms:"#", refund:"#", shipping:"#", contact:"#" }
@@ -453,37 +459,15 @@ const CONFIG = {
 /* ================================================================== */
 
 const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
-const LANG = window.LANG || "en";
-const t = (k, en) => (window.I18N && window.I18N[k]) || en;
-if (window.I18N) { $$("[data-i18n]").forEach(e => { const v = window.I18N[e.dataset.i18n]; if (v) e.innerHTML = v; }); if (window.I18N.title) document.title = window.I18N.title; }
-document.documentElement.lang = LANG;
-const CC = {"Italy":"IT","Afghanistan":"AF","Albania":"AL","American Samoa":"AS","Andorra":"AD","Anguilla":"AI","Antigua and Barbuda":"AG","Argentina":"AR","Armenia":"AM","Aruba":"AW","Australia":"AU","Austria":"AT","Azerbaijan":"AZ","Bahamas":"BS","Bahrain":"BH","Barbados":"BB","Belgium":"BE","Belize":"BZ","Bermuda":"BM","Bhutan":"BT","Bolivia":"BO","Bonaire":"BQ","Bosnia and Herzegovina":"BA","Brazil":"BR","British Virgin Islands":"VG","Brunei":"BN","Bulgaria":"BG","Cambodia":"KH","Canada":"CA","Cayman Islands":"KY","Chile":"CL","China":"CN","Colombia":"CO","Cook Islands":"CK","Costa Rica":"CR","Croatia":"HR","Cuba":"CU","Curaçao":"CW","Cyprus":"CY","Czech Republic":"CZ","Denmark":"DK","Dominica":"DM","Dominican Republic":"DO","Ecuador":"EC","El Salvador":"SV","Estonia":"EE","Falkland Islands":"FK","Fiji":"FJ","Finland":"FI","France":"FR","French Guiana":"GF","French Polynesia":"PF","Georgia":"GE","Germany":"DE","Greece":"GR","Greenland":"GL","Grenada":"GD","Guadeloupe":"GP","Guam":"GU","Guatemala":"GT","Guyana":"GY","Haiti":"HT","Honduras":"HN","Hong Kong":"HK","Hungary":"HU","Iceland":"IS","Iraq":"IQ","Ireland":"IE","Israel":"IL","Jamaica":"JM","Japan":"JP","Jordan":"JO","Kazakhstan":"KZ","Kiribati":"KI","Kosovo":"XK","Kuwait":"KW","Kyrgyzstan":"KG","Laos":"LA","Latvia":"LV","Lebanon":"LB","Liechtenstein":"LI","Lithuania":"LT","Luxembourg":"LU","Macau":"MO","Malaysia":"MY","Maldives":"MV","Malta":"MT","Marshall Islands":"MH","Martinique":"MQ","Mexico":"MX","Micronesia":"FM","Moldova":"MD","Monaco":"MC","Mongolia":"MN","Montenegro":"ME","Montserrat":"MS","Myanmar":"MM","Nauru":"NR","Netherlands":"NL","New Caledonia":"NC","New Zealand":"NZ","Nicaragua":"NI","Niue":"NU","Norfolk Island":"NF","North Macedonia":"MK","Northern Mariana Islands":"MP","Norway":"NO","Oman":"OM","Palau":"PW","Panama":"PA","Papua New Guinea":"PG","Paraguay":"PY","Peru":"PE","Philippines":"PH","Pitcairn Islands":"PN","Poland":"PL","Portugal":"PT","Puerto Rico":"PR","Qatar":"QA","Romania":"RO","Saint Barthélemy":"BL","Saint Kitts and Nevis":"KN","Saint Lucia":"LC","Saint Martin":"MF","Saint Pierre and Miquelon":"PM","Saint Vincent and the Grenadines":"VC","Samoa":"WS","San Marino":"SM","Saudi Arabia":"SA","Serbia":"RS","Sint Maarten":"SX","Slovakia":"SK","Slovenia":"SI","Solomon Islands":"SB","South Korea":"KR","Spain":"ES","Suriname":"SR","Sweden":"SE","Switzerland":"CH","Syria":"SY","Timor-Leste":"TL","Tokelau":"TK","Tonga":"TO","Trinidad and Tobago":"TT","Turkey":"TR","Turkmenistan":"TM","Turks and Caicos Islands":"TC","Tuvalu":"TV","U.S. Virgin Islands":"VI","Ukraine":"UA","United Arab Emirates":"AE","United Kingdom":"GB","United States":"US","Uruguay":"UY","Uzbekistan":"UZ","Vanuatu":"VU","Vatican City":"VA","Venezuela":"VE","Vietnam":"VN","Wallis and Futuna":"WF"};
-const countryName = (() => { try { const dn = new Intl.DisplayNames([LANG], { type: "region" }); return n => { const c = CC[n], v = c && dn.of(c); return v && v !== c ? v : n; }; } catch(_) { return n => n; } })();
-const eur = n => "$" + n.toFixed(2);
-/* Currency display: prices are converted for display only; Lumino charges in USD. */
-const CURRENCIES = { USD:1, EUR:0.86, GBP:0.75, CAD:1.4, AUD:1.53, NZD:1.71, CHF:0.81, MXN:18.62, BRL:5.43, ARS:1293, CLP:948, COP:3966, PEN:3.53, AED:3.67, SAR:3.75, QAR:3.64, KWD:0.31, ILS:3.36, TRY:41.38, JPY:151, KRW:1397, CNY:7.16, HKD:7.8, SGD:1.29, MYR:4.22, PHP:56.9, VND:26293, INR:87.93 };
-const CUR_BY_COUNTRY = { "United States":"USD","Puerto Rico":"USD","Canada":"CAD","United Kingdom":"GBP","Australia":"AUD","New Zealand":"NZD","Switzerland":"CHF","Liechtenstein":"CHF","Mexico":"MXN","Brazil":"BRL","Argentina":"ARS","Chile":"CLP","Colombia":"COP","Peru":"PEN","Ecuador":"USD","Panama":"USD","El Salvador":"USD","United Arab Emirates":"AED","Saudi Arabia":"SAR","Qatar":"QAR","Kuwait":"KWD","Israel":"ILS","Turkey":"TRY","Japan":"JPY","South Korea":"KRW","China":"CNY","Hong Kong":"HKD","Malaysia":"MYR","Philippines":"PHP","Vietnam":"VND" };
-const REGION_CUR = { US:"USD",CA:"CAD",GB:"GBP",AU:"AUD",NZ:"NZD",CH:"CHF",MX:"MXN",BR:"BRL",AR:"ARS",CL:"CLP",CO:"COP",PE:"PEN",AE:"AED",SA:"SAR",QA:"QAR",KW:"KWD",IL:"ILS",TR:"TRY",JP:"JPY",KR:"KRW",CN:"CNY",HK:"HKD",SG:"SGD",MY:"MYR",PH:"PHP",VN:"VND",IN:"INR" };
-let CUR = "USD";
-// display currency fixed to USD (Lumino charges in USD)
-const money = n => {
-  if (CUR === "USD") return eur(n);
-  const v = n * CURRENCIES[CUR];
-  try { return new Intl.NumberFormat("en", { style: "currency", currency: CUR, maximumFractionDigits: v >= 1000 ? 0 : 2 }).format(v); } catch(_) { return CUR + " " + v.toFixed(2); }
-};
+const money = n => CONFIG.CURRENCY + n.toFixed(2);
 const FB_MAP = { ViewContent: "ViewContent", InitiateCheckout: "InitiateCheckout", AddPaymentInfo: "AddPaymentInfo", SubmitForm: "Lead" };
-const ttq_ = (ev, data) => { try { if (window.fbq && window.FB_PIXEL_ID) { if (FB_MAP[ev]) fbq("track", FB_MAP[ev], data || {}); else fbq("trackCustom", ev, data || {}); } } catch(e){} };
+const ttq_ = (ev, data) => { try { if (window.fbq) { if (FB_MAP[ev]) fbq("track", FB_MAP[ev], data || {}); else fbq("trackCustom", ev, data || {}); } } catch(e){} };
 
 // fill static values
 const base = CONFIG.OPTIONS[0];
-function renderPrices(){
-  $$("[data-price]").forEach(e => e.textContent = money(base.price));
-  $$("[data-compare]").forEach(e => { if (base.compare > base.price) e.textContent = money(base.compare); });
-  $$("[data-curnote]").forEach(e => e.textContent = CUR === "USD" ? "" : t("cur_note", "Approximate price in {cur}. You'll be charged {eur} (USD) at checkout.").replace("{cur}", CUR).replace("{eur}", eur(base.price)));
-  $$("[data-optprice]").forEach(e => e.textContent = money(CONFIG.OPTIONS[+e.dataset.optprice].price));
-  if ($("#qtyOpts input:checked")) updateSummary();
-}
-$$("[data-save]").forEach(e => { if (base.compare > base.price) e.textContent = t("save", "Save {p}%").replace("{p}", Math.round((1 - base.price / base.compare) * 100)); else e.remove(); });
+$$("[data-price]").forEach(e => e.textContent = money(base.price));
+$$("[data-compare]").forEach(e => { if (base.compare > base.price) e.textContent = money(base.compare); else e.remove(); });
+$$("[data-save]").forEach(e => { if (base.compare > base.price) e.textContent = "Save " + Math.round((1 - base.price / base.compare) * 100) + "%"; else e.remove(); });
 $$("[data-delivery]").forEach(e => e.textContent = CONFIG.DELIVERY_DAYS);
 $$("[data-store]").forEach(e => e.textContent = CONFIG.STORE_NAME);
 $$("[data-link]").forEach(a => a.href = CONFIG.LINKS[a.dataset.link] || "#");
@@ -491,47 +475,28 @@ $("#yr").textContent = new Date().getFullYear();
 
 $$("[data-img]").forEach(slot => {
   const url = CONFIG.IMAGES[slot.dataset.img];
-  if (url) { slot.classList.add("has-img"); slot.innerHTML = `<img src="${url}" alt="Dual-screen handheld console" loading="${slot.dataset.img === 'hero' ? 'eager' : 'lazy'}">`; }
+  if (url) { slot.classList.add("has-img"); slot.innerHTML = `<img src="${url}" alt="Giant plush cat bed" loading="${slot.dataset.img === 'hero' ? 'eager' : 'lazy'}">`; }
 });
 
-$("#specs").innerHTML = CONFIG.SPECS.map(([k, v], i) => `<div><span>${t("spec_k" + i, k)}</span><span>${t("spec_v" + i, v)}</span></div>`).join("");
-$("#heroSwatches").innerHTML = CONFIG.COLORS.map((c, i) => `<button type="button" class="sw${i === 0 ? " on" : ""}" data-i="${i}"><img src="${c.img}" alt="${t("color" + i, c.name)}">${t("color" + i, c.name)}</button>`).join("");
-$("#colorOpts").innerHTML = CONFIG.COLORS.map((c, i) => `<button type="button" class="sw${i === 0 ? " on" : ""}" data-i="${i}"><img src="${c.img}" alt="${t("color" + i, c.name)}">${t("color" + i, c.name)}</button>`).join("");
-function setColor(i){
-  const c = CONFIG.COLORS[i];
-  $("#color").value = c.name;
-  const h = document.querySelector('[data-img="hero"] img'); if (h) h.src = c.img;
-  $$("#heroSwatches .sw, #colorOpts .sw").forEach(b => b.classList.toggle("on", +b.dataset.i === i));
-}
-$$("#heroSwatches .sw, #colorOpts .sw").forEach(b => b.addEventListener("click", () => setColor(+b.dataset.i)));
-setColor(0);
-const DEFAULT_COUNTRY = (() => { try { const reg = (new Intl.Locale(navigator.language || "en")).maximize().region; const hit = CONFIG.COUNTRIES.find(c => CC[c] === reg); if (hit) return hit; } catch(_) {} return CONFIG.COUNTRIES[0]; })();
-$("#country").innerHTML = [...CONFIG.COUNTRIES].sort((a, b) => countryName(a).localeCompare(countryName(b), LANG)).map(c => `<option value="${c}" ${c === DEFAULT_COUNTRY ? "selected" : ""}>${countryName(c)}</option>`).join("");
-$("#langSel").innerHTML = (window.LANGS || ["en"]).map(l => { let n = l; try { n = new Intl.DisplayNames([l], { type: "language" }).of(l); n = n.charAt(0).toUpperCase() + n.slice(1); } catch(_) {} return `<option value="${l}" ${l === LANG ? "selected" : ""}>${n}</option>`; }).join("");
-$("#langSel").addEventListener("change", e => { try { localStorage.setItem("lang", e.target.value); } catch(_) {} location.reload(); });
+$("#specs").innerHTML = CONFIG.SPECS.map(([k, v]) => `<div><span>${k}</span><span>${v}</span></div>`).join("");
+$("#country").innerHTML = CONFIG.COUNTRIES.map((c, i) => `<option ${i === 0 ? "selected" : ""}>${c}</option>`).join("");
 $("#qtyOpts").innerHTML = CONFIG.OPTIONS.map((o, i) => `
   <label><input type="radio" name="qty" value="${i}" ${i === 0 ? "checked" : ""}>
-    <b>${t("opt" + i, o.label)}</b><small><span data-optprice="${i}">${money(o.price)}</span>${o.badge ? " · " + t("badge", o.badge) : ""}</small></label>`).join("");
+    <b>${o.label}</b><small>${money(o.price)}${o.badge ? " · " + o.badge : ""}</small></label>`).join("");
 if (CONFIG.OPTIONS.length === 1) $("#qtyOpts").style.gridTemplateColumns = "1fr";
 
 function updateSummary(){
   const o = CONFIG.OPTIONS[+document.querySelector("input[name=qty]:checked").value];
   $("#sumSub").textContent = money(o.price);
-  $("#sumShip").textContent = CONFIG.SHIPPING_COST ? money(CONFIG.SHIPPING_COST) : t("free", "Free");
+  $("#sumShip").textContent = CONFIG.SHIPPING_COST ? money(CONFIG.SHIPPING_COST) : "Free";
   $("#sumTot").textContent = money(o.price + CONFIG.SHIPPING_COST);
-  $("#chargeNote").textContent = CUR === "USD" ? "" : t("cur_charge", "You'll be charged {eur} (USD). Your bank converts it to {cur}.").replace("{eur}", eur(o.price + CONFIG.SHIPPING_COST)).replace("{cur}", CUR);
   return o;
 }
 $("#qtyOpts").addEventListener("change", updateSummary);
-$("#curSel").innerHTML = Object.keys(CURRENCIES).map(c => `<option value="${c}" ${c === CUR ? "selected" : ""}>${c}</option>`).join("");
-function setCur(c){ if (!CURRENCIES[c]) return; CUR = c; $("#curSel").value = c; try { localStorage.setItem("cur", c); } catch(_) {} renderPrices(); }
-$("#curSel").addEventListener("change", e => setCur(e.target.value));
-renderPrices();
-// live exchange rates (fallback to the built-in ones above)
-fetch("https://open.er-api.com/v6/latest/USD").then(r => r.json()).then(d => { if (d && d.rates) { Object.keys(CURRENCIES).forEach(c => { if (d.rates[c]) CURRENCIES[c] = d.rates[c]; }); renderPrices(); } }).catch(() => {});
+updateSummary();
 
 // tracking
-ttq_("ViewContent", { content_name: "Dual-Screen Handheld Console", value: base.price, currency: "USD" });
+ttq_("ViewContent", { content_name: "Giant Plush Cat Bed", value: base.price, currency: "USD" });
 
 // all Buy Now buttons → scroll to form
 $$(".buy").forEach(b => b.addEventListener("click", () => {
@@ -561,7 +526,7 @@ $("#orderForm").addEventListener("submit", async e => {
     if (bad) ok = false;
   });
   if (!ok) {
-    err.textContent = t("err_fields", "Please fill in all required fields correctly.");
+    err.textContent = "Please fill in all required fields correctly.";
     err.style.display = "block";
     f.querySelector(".err")?.scrollIntoView({ behavior: "smooth", block: "center" });
     return;
@@ -569,14 +534,14 @@ $("#orderForm").addEventListener("submit", async e => {
   err.style.display = "none";
 
   const opt = updateSummary();
-  if (!opt.lumino || opt.lumino.includes("LINK-LUMINO")) { alert("Payment link not configured yet (CONFIG.OPTIONS → lumino)."); return; }
+  if (!opt.lumino) { err.textContent = "Checkout is temporarily unavailable. Please try again in a few minutes."; err.style.display = "block"; return; }
 
   const data = Object.fromEntries(new FormData(f).entries());
   const payload = {
     order_id: "ORD-" + Date.now().toString(36).toUpperCase(),
     date: new Date().toISOString(),
-    product: "Dual-Screen Handheld Console",
-    color: data.color, offer: opt.label, display_currency: CUR, quantity: opt.qty, total: opt.price + CONFIG.SHIPPING_COST,
+    product: "Giant Plush Cat Bed",
+    offer: opt.label, color: data.color, quantity: opt.qty, total: opt.price + CONFIG.SHIPPING_COST,
     first_name: data.firstName, last_name: data.lastName, email: data.email, phone: data.phone,
     address: data.address, address2: data.address2, zip: data.zip, city: data.city,
     province: data.province, country: data.country, notes: data.notes,
@@ -587,7 +552,7 @@ $("#orderForm").addEventListener("submit", async e => {
   };
 
   const btn = $("#submitBtn");
-  btn.disabled = true; btn.textContent = t("redirecting", "Redirecting to secure payment…");
+  btn.disabled = true; btn.textContent = "Redirecting to secure payment…";
   ttq_("SubmitForm");
   ttq_("AddPaymentInfo", { value: payload.total, currency: "USD" });
   try { localStorage.setItem("last_order", JSON.stringify(payload)); } catch(_) {}
@@ -598,7 +563,7 @@ $("#orderForm").addEventListener("submit", async e => {
       fd.append("_subject", "New order " + payload.order_id + " – " + payload.product + " – $" + payload.total.toFixed(2));
       fd.append("_template", "table");
       fd.append("_captcha", "false");
-      // automatic email to the customer: order confirmation + payment link if not completed
+      // automatic email to the customer right after the form: payment link if not completed
       fd.append("_autoresponse",
         "Hi " + payload.first_name + ",\n\n" +
         "thank you for your order request " + payload.order_id + " (" + opt.label + " – $" + payload.total.toFixed(2) + ").\n\n" +
@@ -615,6 +580,7 @@ $("#orderForm").addEventListener("submit", async e => {
   window.location.href = opt.lumino;
 });
 </script>
+
 <!-- ==================================================================
      GOOGLE SHEETS (opzionale): per ricevere gli ordini in un foglio
      1. Crea un Google Sheet → Estensioni → Apps Script

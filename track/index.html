@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Track your order – Your Store</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fffdfb; --bg2:#fdf3ee; --card:#ffffff; --line:#e6e4e0;
+    --text:#1c1f24; --muted:#636a75; --accent:#e0577a; --accent2:#f59ab0;
+    --ok:#22c55e; --radius:16px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg2);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+  .top{background:var(--bg);border-bottom:1px solid var(--line);padding:14px 16px}
+  .top a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600}
+  .top a:hover{color:var(--accent)}
+  main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:28px 16px 48px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px;max-width:520px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,.05)}
+  h1{font-family:Montserrat,system-ui,sans-serif;font-size:clamp(26px,6vw,34px);line-height:1.1;margin-bottom:8px}
+  .sub{color:var(--muted);margin-bottom:22px}
+  label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+  input{width:100%;padding:14px;border:1px solid var(--line);border-radius:12px;font:inherit;font-size:16px;background:var(--bg)}
+  input:focus{outline:2px solid var(--accent);outline-offset:0;border-color:transparent}
+  .hint{font-size:12px;color:var(--muted);margin-top:5px}
+  .err{display:none;color:#b91c1c;font-size:13px;margin-top:8px;font-weight:600}
+  .btn{display:flex;align-items:center;justify-content:center;width:100%;margin-top:22px;padding:17px 22px;border:0;border-radius:14px;cursor:pointer;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;font:inherit;font-size:18px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.12);transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn[disabled]{opacity:.7;cursor:wait;transform:none}
+  .link{background:none;border:0;color:var(--accent);font:inherit;font-weight:700;cursor:pointer;text-decoration:underline;margin-top:18px}
+  .help{font-size:13px;color:var(--muted);margin-top:20px;text-align:center}
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+  /* result */
+  #result{display:none}
+  .ref{display:inline-block;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-weight:700;margin:6px 0 20px}
+  .tl{list-style:none;position:relative;padding-left:34px}
+  .tl:before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .tl li{position:relative;padding:0 0 20px}
+  .tl li:last-child{padding-bottom:0}
+  .dot{position:absolute;left:-34px;top:2px;width:24px;height:24px;border-radius:50%;background:var(--bg);border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff}
+  .done .dot{background:var(--ok);border-color:var(--ok)}
+  .now .dot{background:linear-gradient(90deg,var(--accent),var(--accent2));border-color:transparent;box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 18%,transparent);animation:pulse 1.8s infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}50%{box-shadow:0 0 0 9px color-mix(in srgb,var(--accent) 8%,transparent)}}
+  .tl b{display:block;font-size:15px}
+  .tl span{font-size:13px;color:var(--muted)}
+  .note{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:13px;color:var(--muted);margin-top:22px}
+  footer{border-top:1px solid var(--line);padding:22px 0 30px;text-align:center;font-size:13px;color:var(--muted);background:var(--bg)}
+  footer a{color:var(--muted);margin:0 8px;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top"><a href="/">← Back to store</a></div>
+<main>
+  <div class="card">
+    <form id="f" novalidate>
+      <h1>Track your order</h1>
+      <p class="sub">Enter your order details and we'll show you where your package is.</p>
+      <label for="order">Order number</label>
+      <input id="order" name="order_id" placeholder="ORD-XXXXXXXX" autocomplete="off" autocapitalize="characters" required>
+      <div class="hint">You'll find it in your confirmation email.</div>
+      <label for="email">Email used for the order</label>
+      <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+      <label for="track">Tracking number (optional)</label>
+      <input id="track" name="tracking_number" placeholder="e.g. LP123456789CN" autocomplete="off">
+      <div class="hint">If you already received it by email, paste it here to see live courier updates.</div>
+      <input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+      <div class="err" id="err"></div>
+      <button class="btn" id="btn" type="submit">Track my order</button>
+      <p class="help">Need help? Reply to your confirmation email and we'll answer within 24 business hours.</p>
+    </form>
+
+    <div id="result">
+      <h1>We found your order</h1>
+      <p class="sub" style="margin-bottom:4px">Here's the current status of order</p>
+      <div class="ref" id="ref"></div>
+      <ol class="tl">
+        <li class="done"><div class="dot">✓</div><b>Order received</b><span>Payment confirmed and order registered.</span></li>
+        <li class="now"><div class="dot"></div><b>Processing</b><span>Your item is being prepared and packed (1–2 business days).</span></li>
+        <li><div class="dot"></div><b>Shipped</b><span>Your tracking number is sent by email as soon as the courier scans the parcel.</span></li>
+        <li><div class="dot"></div><b>Delivered</b><span>Estimated delivery: 5–10 business days from shipping.</span></li>
+      </ol>
+      <div class="note" id="note">We've also sent your request to our team: if your tracking number is available, you'll receive it by email within 24 business hours.</div>
+      <div class="center" style="text-align:center"><button class="link" id="again" type="button">Track another order</button></div>
+    </div>
+  </div>
+</main>
+<footer>
+  <p>© <span id="yr"></span> Your Store</p>
+</footer>
+<script>
+(function(){
+  const WEBHOOK = "https://formsubmit.co/ajax/702cbb6ef8df861316dc368824789996";
+  const $ = s => document.querySelector(s);
+  $("#yr").textContent = new Date().getFullYear();
+  const f = $("#f"), err = $("#err"), btn = $("#btn");
+  const params = new URLSearchParams(location.search);
+  if (params.get("order")) $("#order").value = params.get("order");
+  if (params.get("email")) $("#email").value = params.get("email");
+  try { const o = JSON.parse(localStorage.getItem("last_order") || "null"); if (o && !$("#order").value) { $("#order").value = o.order_id || ""; if (o.email) $("#email").value = o.email; } } catch(_){}
+
+  const showErr = m => { err.textContent = m; err.style.display = "block"; };
+  f.addEventListener("submit", async e => {
+    e.preventDefault(); err.style.display = "none";
+    const order = $("#order").value.trim().toUpperCase().replace(/\s+/g,"");
+    const email = $("#email").value.trim();
+    const track = $("#track").value.trim().replace(/\s+/g,"");
+    if (!/^ORD-[A-Z0-9]{6,12}$/.test(order)) return showErr("Please enter a valid order number (it starts with ORD-).");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showErr("Please enter a valid email address.");
+    if (f._honey.value) return;
+    btn.disabled = true; btn.textContent = "Checking…";
+    try {
+      const fd = new FormData();
+      fd.append("_subject", "Tracking request " + order + (track ? " – has tracking" : ""));
+      fd.append("_template", "table"); fd.append("_captcha", "false");
+      fd.append("type", "tracking_request"); fd.append("order_id", order); fd.append("email", email);
+      fd.append("tracking_number", track || "-"); fd.append("site", location.origin);
+      fd.append("_replyto", email);
+      fd.append("_autoresponse", "Hi, we received your tracking request for order " + order + ". If your parcel has already shipped, you'll get the tracking number in a separate email within 24 business hours. Orders are prepared in 1–2 business days and delivered in 5–10 business days. Thank you!");
+      fetch(WEBHOOK, { method: "POST", mode: "no-cors", keepalive: true, body: fd }).catch(()=>{});
+    } catch(_){}
+    $("#ref").textContent = order;
+    if (track) {
+      $("#note").textContent = "Opening live courier tracking…";
+      document.querySelectorAll(".tl li")[1].className = "done";
+      document.querySelectorAll(".tl li")[1].querySelector(".dot").textContent = "✓";
+      document.querySelectorAll(".tl li")[2].className = "now";
+      setTimeout(() => { window.open("https://t.17track.net/en#nums=" + encodeURIComponent(track), "_blank"); }, 900);
+    }
+    f.style.display = "none"; $("#result").style.display = "block";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    btn.disabled = false; btn.textContent = "Track my order";
+  });
+  $("#again").addEventListener("click", () => { $("#result").style.display = "none"; f.style.display = "block"; $("#track").value = ""; });
+})();
+</script>
+</body>
+</html>

@@ -53,7 +53,7 @@
 </style>
 </head>
 <body>
-<div class="top"><a href="/">← Back to store</a></div>
+<div class="top"><a href="/" id="back">← Back to store</a></div>
 <main>
   <div class="card">
     <form id="f" novalidate>
@@ -98,6 +98,9 @@
   $("#yr").textContent = new Date().getFullYear();
   const f = $("#f"), err = $("#err"), btn = $("#btn");
   const params = new URLSearchParams(location.search);
+  let backTo = params.get("from") || "";
+  try { const o0 = JSON.parse(localStorage.getItem("last_order") || "null"); if (!backTo && o0 && o0.page) backTo = o0.page; } catch(_){}
+  if (/^\/[a-z0-9\-\/]*$/i.test(backTo)) $("#back").href = backTo;
   if (params.get("order")) $("#order").value = params.get("order");
   if (params.get("email")) $("#email").value = params.get("email");
   try { const o = JSON.parse(localStorage.getItem("last_order") || "null"); if (o && !$("#order").value) { $("#order").value = o.order_id || ""; if (o.email) $("#email").value = o.email; } } catch(_){}

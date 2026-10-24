@@ -50,8 +50,8 @@ fbq('init', window.FB_PIXEL_ID); fbq('track', 'PageView');
   try {
     const key = "purchase_tracked_" + (o ? o.order_id : "x");
     if (!localStorage.getItem(key)) {
-      if (window.fbq) fbq("track", "Purchase", { value: o ? o.total : 35.90, currency: "USD", content_name: o ? o.product : "Dual-Screen Handheld Console" });
-      if (window.ttq) window.ttq.track("CompletePayment", { value: o ? o.total : 35.90, currency: "USD", content_name: o ? o.product : "Dual-Screen Handheld Console" });
+      if (window.fbq) fbq("track", "Purchase", { value: o ? o.total : 44.90, currency: "USD", content_name: o ? o.product : "Dual-Screen Handheld Console" });
+      if (window.ttq) window.ttq.track("CompletePayment", { value: o ? o.total : 44.90, currency: "USD", content_name: o ? o.product : "Dual-Screen Handheld Console" });
       localStorage.setItem(key, "1");
     }
   } catch(_) {}
